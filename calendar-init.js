@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
             right: 'next'
         },
         events: function(info, successCallback, failureCallback) {
-            const icalUrl = 'https://calendar.google.com/calendar/ical/81d94c0e97baf81fbf0e24dd54fb90c6a559ccca45ba65b2242572a864290a42%40group.calendar.google.com/private-d93b1f1a7c77ca3f5d591d38539c7baa/basic.ics';
-            const proxiedUrl = 'https://corsproxy.io/?' + encodeURIComponent(icalUrl);
+            const icalUrl = 'https://calendar.google.com/calendar/ical/81d94c0e97baf81fbf0e24dd54fb90c6a559ccca45ba65b2242572a864290a42%40group.calendar.google.com/public/basic.ics';
+            const proxiedUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(icalUrl);
 
             fetch(proxiedUrl)
                 .then(response => {
@@ -45,11 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     successCallback(events);
                 })
                 .catch(error => {
-                    console.error('Calendar error, trying backup proxy:', error);
-                    fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(icalUrl))
-                        .then(resp => resp.json())
-                        .then(json => {
-                             const data = json.contents;
+                    console.error('Calendar error:', error);
+                    // Fallback to another proxy if needed
+                    const secondaryProxiedUrl = 'https://corsproxy.io/?' + encodeURIComponent(icalUrl);
+                    fetch(secondaryProxiedUrl)
+                        .then(response => {
+                            if (!response.ok) throw new Error('Secondary proxy failed');
+                            return response.text();
+                        })
+                        .then(data => {
                              var jcalData = ICAL.parse(data);
                              var comp = new ICAL.Component(jcalData);
                              var vevents = comp.getAllSubcomponents('vevent');
@@ -65,6 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                 };
                              });
                              successCallback(events);
+                        })
+                        .catch(err => {
+                            console.error('All proxies failed', err);
+                            failureCallback(err);
                         });
                 });
         },
