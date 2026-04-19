@@ -1,5 +1,5 @@
-   :root { --dark-green: #1B3022; --sand: #F9F7F2; --gold: #C5A059; }
-        body { font-family: 'Montserrat', sans-serif; color: #333; background-color: #fff; }
+   :root { --gold: #c19b76; --dark: #2c2c2c; --light-bg: #fdfbf7; --dark-green: #1B3022; --sand: #F9F7F2; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--dark); background-color: var(--light-bg); }
         html { scroll-behavior: smooth; }
         .hero { 
             height: 100vh; 
@@ -11,17 +11,33 @@
         .navbar-glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.1); }
         .navbar-glass .navbar-nav .nav-link { color: var(--dark-green); font-weight: 500; transition: color 0.3s; }
         .navbar-glass .navbar-nav .nav-link:hover { color: var(--gold); }
-        .navbar-glass .btn-book { background-color: var(--dark-green); color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 25px; transition: background-color 0.3s; }
-        .navbar-glass .btn-book:hover { background-color: var(--gold); color: white; }
+        .btn-book { background-color: var(--gold); color: white; border: none; padding: 0.75rem 2rem; border-radius: 25px; transition: all 0.3s; font-weight: 600; text-decoration: none; display: inline-block; }
+        .btn-book:hover { background-color: #a88562; color: white; transform: translateY(-2px); text-decoration: none; }
+        
+        .navbar-glass .btn-book { padding: 0.5rem 1.5rem; }
         
         .section-padding { padding: 100px 0; }
         #booking { padding-bottom: 260px; }
         .bg-accent { background-color: var(--sand); }
         .btn-direct { 
-            background-color: var(--dark-green); color: white; padding: 18px 45px; 
-            border-radius: 0; text-transform: uppercase; letter-spacing: 2px; border: none; transition: 0.3s;
+            background-color: var(--gold);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .btn-direct:hover { background-color: var(--gold); color: white; }
+        .btn-direct:hover { 
+            transform: translateY(-3px);
+            background-color: #a88562;
+            color: white;
+        }
 
         .lang-switcher button,
         .lang-switcher a {
@@ -75,6 +91,7 @@
             position: fixed; bottom: 120px; right: 30px; background: #25d366; color: white;
             width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
             justify-content: center; font-size: 32px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
@@ -93,7 +110,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             width: 100%;
             max-width: none;
-            height: 660px;
+            height: 400px;
         }
 
         .calendar-viewport iframe {
@@ -101,7 +118,178 @@
             width: 100%;
             height: 750px;
             margin-top: -30px;
-            margin-left: 0;
+            margin-bottom: 0;
             border: 0;
         }
-    
+
+        /* Calendar Styling */
+        #calendar {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .fc a {
+            text-decoration: none !important;
+            color: inherit !important;
+            cursor: default !important;
+        }
+
+        .fc-daygrid-day {
+            overflow: visible !important;
+        }
+
+        .fc-view-harness {
+            overflow: visible !important;
+        }
+
+        .fc {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .fc .fc-button-primary:not(:disabled).fc-button-active,
+        .fc .fc-button-primary:not(:disabled):hover {
+            background-color: var(--dark-green) !important;
+            border-color: var(--dark-green) !important;
+        }
+
+        .fc .fc-button-primary:not(:disabled) {
+            background-color: #fff;
+            border-color: #e0e0e0;
+            color: var(--dark-green);
+        }
+
+        .fc .fc-button-primary:disabled {
+            background-color: #f5f5f5;
+            border-color: #e0e0e0;
+            color: #999;
+        }
+
+        .fc .fc-button-group > .fc-button:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+
+        .fc .fc-button-group > .fc-button:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+
+        .fc .fc-col-header-cell {
+            background-color: #fff;
+            border-color: #e0e0e0;
+            color: var(--dark-green);
+            font-weight: 600;
+            padding: 4px 0;
+        }
+
+        .fc .fc-daygrid-day {
+            border-color: #e0e0e0;
+        }
+
+        .fc .fc-daygrid-day-number {
+            padding: 0.2em 0.4em;
+            color: #333;
+            font-size: 0.8em;
+        }
+
+        /* Force reduce cell height using em */
+        .fc-daygrid-day-frame {
+            min-height: 1.5em !important;
+            height: 2em !important;
+        }
+        .fc-daygrid-body tr {
+            height: 2em !important;
+        }
+        .fc-scrollgrid-sync-table {
+            height: auto !important;
+        }
+
+        .fc .fc-daygrid-day.fc-day-other .fc-daygrid-day-number {
+            color: #ccc;
+        }
+
+        .fc-event {
+            background-color: #f8d7da !important;
+            border: none !important;
+            cursor: default;
+        }
+        .fc-event-title { display: none !important; }
+        .fc-bg-event {
+            opacity: 1 !important;
+            background-color: #f8d7da !important;
+        }
+        
+        /* 1. Base: Future and Today are Green */
+        .fc-daygrid-day.fc-day-future,
+        .fc-daygrid-day.fc-day-today {
+            background-color: #c8e6c9 !important; /* More vibrant green */
+        }
+
+        /* 2. Overwrite for Reserved (even in future) */
+        .fc-daygrid-day:has(.fc-bg-event) {
+            background-color: #f8d7da !important;
+        }
+
+        /* 3. Overwrite for ALL Past days (Strictly Grey) */
+        .fc-daygrid-day.fc-day-past,
+        .fc-daygrid-day.fc-day-past .fc-bg-event {
+            background-color: #eeeeee !important;
+        }
+        
+        /* Ensure "other month" days don't turn grey if they are future */
+        .fc-daygrid-day.fc-day-other.fc-day-future {
+            background-color: #c8e6c9 !important;
+            opacity: 0.7;
+        }
+
+        .fc-daygrid-day.fc-day-past .fc-daygrid-day-number {
+            color: #999 !important;
+        }
+
+        .fc-day-today { background-color: rgba(193, 155, 118, 0.1) !important; }
+        .fc-toolbar-title { font-size: 1.3rem !important; }
+        .fc-button-primary { background-color: transparent !important; border: 1px solid #eee !important; color: #333 !important; }
+
+        .fc .fc-daygrid-day:hover {
+            background-color: #fafafa;
+        }
+
+        @media (max-width: 768px) {
+            .fc .fc-button {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            .fc .fc-toolbar-title { font-size: 1.1rem !important; }
+        }
+
+        /* FAQ Accordion Styling */
+        .accordion-item {
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 0.5rem;
+            border-radius: 12px !important;
+            overflow: hidden;
+            background: #fff;
+        }
+        .accordion-button {
+            font-weight: 600;
+            color: var(--dark-green);
+            background-color: #fff;
+            padding: 1.25rem;
+        }
+        .accordion-button:not(.collapsed) {
+            color: var(--gold);
+            background-color: var(--sand);
+            box-shadow: none;
+        }
+        .accordion-button:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 0.25rem rgba(193, 155, 118, 0.15);
+        }
+        .accordion-button::after {
+            filter: grayscale(1);
+        }
+        .accordion-body {
+            color: #555;
+            line-height: 1.7;
+            background-color: var(--sand);
+        }
