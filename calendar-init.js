@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
            
             const icalUrl = 'https://calendar.google.com/calendar/ical/81d94c0e97baf81fbf0e24dd54fb90c6a559ccca45ba65b2242572a864290a42@group.calendar.google.com/private-d93b1f1a7c77ca3f5d591d38539c7baa/basic.ics';
 
-            fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(icalUrl))
+            fetch('/calendar.ics')
                 .then(response => {
                     if (!response.ok) throw new Error('Network response was not ok');
                     return response.text();

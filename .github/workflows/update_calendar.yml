@@ -17,5 +17,4 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add calendar.ics
-          git commit -m "Update calendar data" || exit 0
           git push
