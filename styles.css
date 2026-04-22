@@ -94,6 +94,11 @@
             text-decoration: none;
         }
 
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .whatsapp-float {
                 bottom: 100px;

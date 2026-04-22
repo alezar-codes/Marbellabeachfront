@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/en/">
-    <title>Redirecting...</title>
+    <title>Marbella Beachfront | Luxury Rental</title>
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('es')) {
+            window.location.href = '/es/';
+        } else {
+            window.location.href = '/en/';
+        }
+    </script>
+    <meta http-equiv="refresh" content="2; url=/en/">
 </head>
 <body>
-    <p>Redirecting to <a href="/en/">English version</a>...</p>
+    <p>Redirecting... <a href="/en/">English</a> | <a href="/es/">Español</a></p>
 </body>
 </html>

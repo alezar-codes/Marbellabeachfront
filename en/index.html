@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,8 @@
     <link rel="alternate" href="/es/" hreflang="es">
     <link rel="alternate" href="/en/" hreflang="x-default">
     <link rel="canonical" href="/en/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -34,6 +36,40 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.11/index.global.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VacationRental",
+      "name": "Marbella Beachfront | Luxury Apartment in Elviria",
+      "description": "Luxury 120 m² beachfront apartment in Jardines de las Golondrinas, Elviria. 2 bedrooms, sea views and direct beach access.",
+      "url": "https://marbellabeachfront.es/en/",
+      "image": "https://marbellabeachfront.es/images/443747082.webp",
+      "identifier": "VFT/MA/22699",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Marbella",
+        "addressRegion": "Andalusia",
+        "addressCountry": "ES",
+        "postalCode": "29604"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "36.4916", 
+        "longitude": "-4.7735"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Beachfront", "value": "true" },
+        { "@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": "true" },
+        { "@type": "LocationFeatureSpecification", "name": "High-speed WiFi", "value": "true" },
+        { "@type": "LocationFeatureSpecification", "name": "Private Parking", "value": "true" }
+      ],
+      "sameAs": [
+        "https://www.booking.com/Share-DUS432",
+        "https://www.airbnb.com/rooms/842041070115468929"
+      ]
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-glass fixed-top">
@@ -77,11 +113,11 @@
     <header class="hero">
         <div class="container">
             <div class="lang-switcher mb-4 d-flex justify-content-end">
-                <a class="lang-link" href="/en/">EN</a>
+                <a class="lang-link active" href="./">EN</a>
                 <a class="lang-link ms-2" href="/es/">ES</a>
             </div>
             <div class="mb-4"><span style="border: 1px solid white; padding: 5px 20px; text-transform: uppercase; letter-spacing: 3px;">Marbella Beachfront</span></div>
-            <h1>Morning with sea and pine views</h1>
+            <h1>Beachfront Escape: Morning with sea and pine views in Elviria</h1>
             <p class="lead mb-5 fs-4">Elegant 120 m² apartments in Jardines de las Golondrinas<br>First line • 1 minute to Elviria beach</p>
             <a href="#booking" class="btn-direct text-decoration-none">Book direct</a>
         </div>
@@ -133,20 +169,20 @@
                 <div class="row g-2">
                     <div class="col-12">
                         <figure class="gallery-item">
-                            <img src="../images/444259035.webp" class="gallery-img img-fluid" alt="Apartment interior" loading="lazy">
+                            <img src="../images/444259035.webp" class="gallery-img img-fluid" alt="Elegant living room interior with modern furniture and sea views" width="800" height="600" loading="lazy">
                             <figcaption class="mt-2 text-muted">Apartment Interior</figcaption>
                         </figure>
                     </div>
                     <div class="col-6">
                         <figure class="gallery-item">
-                            <img src="../images/443746488.webp" class="gallery-img img-fluid" alt="Terrace" loading="lazy">
+                            <img src="../images/443746488.webp" class="gallery-img img-fluid" alt="Spacious private terrace with outdoor seating and lush garden views" width="600" height="400" loading="lazy">
                             <figcaption class="mt-2 text-muted">Terrace</figcaption>
                         </figure>
                     </div>
                     <div class="col-6">
                         <figure class="gallery-item">
-                            <img src="../images/444259108.webp" class="gallery-img img-fluid" alt="Dining area" loading="lazy">
-                            <figcaption class="mt-2 text-muted">Dining area</figcaption>
+                            <img src="../images/443747416.webp" class="gallery-img img-fluid" alt="Exterior view of the Marbella Beachfront residential complex" width="600" height="400" loading="lazy">
+                            <figcaption class="mt-2 text-muted">Tropical garden</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -214,41 +250,67 @@
     <section class="section-padding container text-center" id="gallery">
         <h2 class="mb-5">Photo Gallery</h2>
         <div class="row g-3">
+            <!-- 1. Living Room -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="../images/444259035.webp" class="gallery-img img-fluid" alt="Living Area" loading="lazy">
-                    <figcaption class="mt-2 text-muted">Living Area</figcaption>
+                    <img src="../images/444259035.webp" class="gallery-img img-fluid" alt="Elegant living room with plush sofas, contemporary design, and a bright, airy atmosphere" width="800" height="600" loading="lazy">
+                    <figcaption class="mt-2 text-muted">Spacious Living Area</figcaption>
                 </figure>
             </div>
+            <!-- 2. Terrace 1 -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="../images/443746488.webp" class="gallery-img img-fluid" alt="Terrace" loading="lazy">
-                    <figcaption class="mt-2 text-muted">Terrace</figcaption>
+                    <img src="../images/443746488.webp" class="gallery-img img-fluid" alt="Large private terrace featuring premium outdoor lounge furniture with beautiful views of the pine trees and the Mediterranean sea" width="800" height="600" loading="lazy">
+                    <figcaption class="mt-2 text-muted">Private Terrace</figcaption>
                 </figure>
             </div>
-             <div class="col-md-4">
-                <figure class="gallery-item">
-                    <img src="../images/444258292.webp" class="gallery-img img-fluid" alt="Bedroom Suite" loading="lazy">
-                    <figcaption class="mt-2 text-muted">Bedroom Suite</figcaption>
-                </figure>
-            </div>
+            <!-- 3. Terrace 2 (Egg Chair) -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="../images/444258145.webp" class="gallery-img img-fluid" alt="Bedroom" loading="lazy">
+                    <img src="../images/515034747.webp" class="gallery-img img-fluid" alt="Charming terrace nook with a stylish hanging egg chair and a complete outdoor dining set" width="800" height="600" loading="lazy">
+                    <figcaption class="mt-2 text-muted">Relaxation Corner</figcaption>
+                </figure>
+            </div>
+            <!-- 4. Sea View -->
+            <div class="col-md-4">
+                <figure class="gallery-item">
+                    <img src="../images/443747082.webp" class="gallery-img img-fluid" alt="Spectacular, unobstructed view of the turquoise Mediterranean Sea" width="800" height="600" loading="lazy">
+                    <figcaption class="mt-2 text-muted">Panoramic Sea Views</figcaption>
+                </figure>
+            </div>
+            <!-- 5. Master Suite -->
+            <div class="col-md-4">
+                <figure class="gallery-item">
+                    <img src="../images/444258292.webp" class="gallery-img img-fluid" alt="Luxurious master suite featuring a premium King-size bed, high-end linens, and elegant decor" width="800" height="600" loading="lazy">
+                    <figcaption class="mt-2 text-muted">Master Bedroom</figcaption>
+                </figure>
+            </div>
+            <!-- 6. Twin Bedroom -->
+            <div class="col-md-4">
+                <figure class="gallery-item">
+                    <img src="../images/444258145.webp" class="gallery-img img-fluid" alt="Stylish second bedroom with two comfortable twin beds and sophisticated interior design" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Bedroom</figcaption>
                 </figure>
             </div>
+            <!-- 7. Dining Area -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="../images/436963533.webp" class="gallery-img img-fluid" alt="Swimming Pool" loading="lazy">
-                    <figcaption class="mt-2 text-muted">Swimming Pool</figcaption>
+                    <img src="../images/444258766.webp" class="gallery-img img-fluid" alt="Contemporary dining space with a designer table and direct access to the sun-drenched terrace" width="800" height="600" loading="lazy">
+                    <figcaption class="mt-2 text-muted">Dining Area</figcaption>
                 </figure>
             </div>
-    
+            <!-- 8. Pool -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="../images/436963535.webp" class="gallery-img img-fluid" alt="Tropical Garden" loading="lazy">
-                    <figcaption class="mt-2 text-muted">Tropical Garden</figcaption>
+                    <img src="../images/436963533.webp" class="gallery-img img-fluid" alt="Crystal clear swimming pool set within beautifully manicured subtropical gardens in Elviria" width="800" height="600" loading="lazy">
+                    <figcaption class="mt-2 text-muted">Subtropical Pool</figcaption>
+                </figure>
+            </div>
+            <!-- 9. Chiringuito -->
+            <div class="col-md-4">
+                <figure class="gallery-item">
+                    <img src="../images/462417799.webp" class="gallery-img img-fluid" alt="Traditional seaside chiringuito bar and restaurant offering a relaxed Mediterranean dining experience" width="800" height="600" loading="lazy">
+                    <figcaption class="mt-2 text-muted">Seaside Chiringuito</figcaption>
                 </figure>
             </div>
         </div>
@@ -258,17 +320,17 @@
         <div class="container">
             <h2 class="text-center mb-5">Guest Reviews</h2>
             <div class="reviews-grid">
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p>"Very well equipped with everything needed, spacious, comfortable home in a quality community."</p>
                     <cite>- Thomas, United Kingdom</cite>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p>"Lovely apartment with everything you could possibly need. Comfortable beds and very nice furnishings. Excellent location for beach, bars and restaurants."</p>
                     <cite>- Andrew, United Kingdom</cite>
                 </div>
-                <div class="review-card">
+                <div class="review-card reveal">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p>"We loved our stay! Perfect location, amazing apartment. Much larger than we thought. Felt safe. Have already booked to stay again next year."</p>
                     <cite>- Hayley, United Kingdom</cite>
