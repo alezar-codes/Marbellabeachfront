@@ -16,16 +16,22 @@
     <meta property="fb:app_id" content="2254764404931859" />
 
     <script>
-        const userLang = navigator.language || navigator.userLanguage;
-        if (userLang.startsWith('es')) {
-            window.location.href = '/es/';
-        } else {
-            window.location.href = '/en/';
+        // Проверяем, не Фейсбук ли это (у них в User Agent есть слово facebookexternalhit)
+        if (!navigator.userAgent.includes('facebookexternalhit')) {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('es')) {
+                window.location.href = '/es/';
+            } else {
+                window.location.href = '/en/';
+            }
         }
     </script>
-    <meta http-equiv="refresh" content="2; url=/en/">
+
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/">
+    </noscript>
 </head>
 <body>
-    <p>Redirecting... <a href="/en/">English</a> | <a href="/es/">Español</a></p>
+    <p>Redirecting to / Redireccionando a <a href="/en/">Marbella Beachfront</a></p>
 </body>
 </html>
