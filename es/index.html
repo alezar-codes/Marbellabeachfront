@@ -28,6 +28,8 @@
     <link rel="alternate" href="https://marbellabeachfront.es/es/" hreflang="es">
     <link rel="alternate" href="https://marbellabeachfront.es/en/" hreflang="x-default">
     <link rel="canonical" href="https://marbellabeachfront.es/es/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -36,50 +38,99 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     
     <!-- FullCalendar Dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.11/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.11/index.global.min.js" defer></script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VacationRental",
-      "name": "Marbella Beachfront | Apartamento de Lujo en Elviria",
-      "description": "Apartamento de lujo de 120 m² en primera línea de playa en Jardines de las Golondrinas, Elviria. 2 dormitorios, vistas al mar y acceso directo a la playa.",
-      "url": "https://marbellabeachfront.es/es/",
-      "image": "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747082_1_wy7gyt.webp",
-      "identifier": "VFT/MA/621203",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Marbella",
-        "addressRegion": "Andalucía",
-        "addressCountry": "ES",
-        "postalCode": "29604"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "36.4916", 
-        "longitude": "-4.7735"
-      },
-      "amenityFeature": [
+[
+{
+  "@context": "https://schema.org",
+  "@type": "VacationRental",
+  "name": "Marbella Beachfront | Apartamento de Lujo en Elviria",
+  "description": "Apartamento de lujo de 120 m² en primera línea de playa en Jardines de las Golondrinas, Elviria. 2 dormitorios, vistas al mar y acceso directo a la playa.",
+  "identifier": "VFT/MA/621203",
+  "url": "https://marbellabeachfront.es/es/",
+  "image": "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747082_1_wy7gyt.webp",
+  "containsPlace": {
+    "@type": "Apartment",
+    "name": "Apartamento de Lujo de 2 Dormitorios con Vistas al Mar",
+    "numberOfRooms": 2,
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "maxValue": 4
+    },
+    "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Primera línea de playa", "value": "true" },
         { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": "true" },
         { "@type": "LocationFeatureSpecification", "name": "WiFi de alta velocidad", "value": "true" },
         { "@type": "LocationFeatureSpecification", "name": "Parking privado", "value": "true" }
       ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "9.7",
-        "bestRating": "10",
-        "worstRating": "1",
-        "ratingCount": "30"
-      },
-      "priceRange": "€€€",
-      "sameAs": [
-    "https://www.booking.com/Share-DUS432",
-    "https://www.airbnb.com/rooms/842041070115468929"
-  ]
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jardines de las Golondrinas",
+      "addressLocality": "Marbella",
+      "addressRegion": "Andalucía",
+      "postalCode": "29604",
+      "addressCountry": "ES"
     }
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "36.4916", 
+    "longitude": "-4.7735"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "70.00",
+    "priceCurrency": "EUR",
+    "priceValidUntil": "2026-12-31",
+    "description": "El precio comienza desde 70 EUR por noche en temporada baja. Las tarifas varían según la temporada.",
+    "availability": "https://schema.org/InStock",
+    "url": "https://marbellabeachfront.es/es/#booking"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "9.7",
+    "ratingCount": "30"
+  },
+  "priceRange": "€€€",
+      "sameAs": [
+        "https://www.booking.com/Share-DUS432",
+        "https://www.airbnb.com/rooms/842041070115468929"
+      ]
+},
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hay ascensor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿A qué distancia está la playa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 minuto a pie"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El aparcamiento es gratuito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, aparcamiento privado vallado"
+      }
+    }
+  ]
+}
+]
     </script>
     <!-- Meta Pixel Code -->
 <script>
@@ -146,7 +197,7 @@ src="https://www.facebook.com/tr?id=1328197765833225&ev=PageView&noscript=1"
             </div>
             <div class="mb-4"><span style="border: 1px solid white; padding: 5px 20px; text-transform: uppercase; letter-spacing: 3px;">Marbella Beachfront</span></div>
             <h1>Escapada frente al mar: Mañana con vistas al mar y los pinos en Elviria</h1>
-            <p class="lead mb-5 fs-4">Elegantes apartamentos de 120 m² en Jardines de las Golondrinas<br>Línea de playa • 1 minuto de la playa de Elviria</p>
+            <p class="lead mb-5 fs-4">Elegantes apartamentos de 120 m² en Jardines de las Golondrinas<br>Primera línea • 1 minuto de la playa de Elviria • Estancias de lujo desde 70€ por noche</p>
             <a href="#booking" class="btn-direct text-decoration-none">Reservar directo</a>
         </div>
     </header>
@@ -156,6 +207,7 @@ src="https://www.facebook.com/tr?id=1328197765833225&ev=PageView&noscript=1"
             <h2 class="text-center mb-5">¿Por qué reservar directamente?</h2>
             <div class="row g-4">
                 <div class="col-md-4 text-center reveal">
+
                     <i class="fa fa-dollar-sign fa-3x mb-3" style="color: var(--gold);"></i>
                     <h4>Garantía del mejor precio</h4>
                     <p>Sin comisiones de servicio como en Booking/Airbnb.</p>
@@ -179,14 +231,14 @@ src="https://www.facebook.com/tr?id=1328197765833225&ev=PageView&noscript=1"
             <div class="col-lg-6 mb-5 mb-lg-0">
                 <h2 class="display-5 mb-4">Tu escapada en primera línea</h2>
                 <p class="lead text-muted">Un espacio perfecto para quienes valoran la tranquilidad, la estética y el sonido de las olas.</p>
-                <p>Amplios apartamentos (120 m²) ubicados en la exclusiva urbanización de Elviria.</p>
+                <p>Amplios apartamentos (120 m²) ubicados en la exclusiva urbanización de Elviria community.</p>
                 <ul class="list-unstyled mb-3">
                     <li><i class="fa fa-bed me-2"></i>Dormitorio principal con cama King-size premium y baño en suite.</li>
                     <li><i class="fa fa-bed me-2"></i>Segundo dormitorio con dos camas individuales cómodas, perfecto para familia o amigos.</li>
                 </ul>
                 <p>Disfruta de 2 baños y una gran terraza donde el aroma de los pinos se mezcla con la brisa marina.</p>
                 <div class="row g-4 mt-2">
-                    <div class="col-6"><strong><i class="fa fa-expand me-2"></i> 120 m²</strong></div>
+                    <div class="col-6"><strong><i class="fa fa-expand me-2"></i> 120 m² de superficie</strong></div>
                     <div class="col-6"><strong><i class="fa fa-umbrella-beach me-2"></i> 100m al mar</strong></div>
                     <div class="col-6"><strong><i class="fa fa-parking me-2"></i> Aparcamiento privado</strong></div>
                     <div class="col-6"><strong><i class="fa fa-wifi me-2"></i> Wi-Fi de alta velocidad</strong></div>
@@ -280,63 +332,63 @@ src="https://www.facebook.com/tr?id=1328197765833225&ev=PageView&noscript=1"
             <!-- 1. Sala de estar -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Elegante sala de estar con sofás lujosos, diseño contemporáneo y un ambiente luminoso y espacioso" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Elegante sala de estar con sofás lujosos, diseño contemporáneo y un ambiente luminoso y espacioso" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Amplia sala de estar</figcaption>
                 </figure>
             </div>
             <!-- 2. Terraza 1 -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/443746488_dv4bmi.webp" class="gallery-img img-fluid" alt="Gran terraza privada con muebles de descanso de primera calidad y hermosas vistas a los pinos y al mar Mediterráneo" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/443746488_dv4bmi.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Gran terraza privada con muebles de descanso de primera calidad y hermosas vistas a los pinos y al mar Mediterráneo" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Terraza privada</figcaption>
                 </figure>
             </div>
             <!-- 3. Terraza 2 (Silla colgante) -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/515034747_zbstva.webp" class="gallery-img img-fluid" alt="Encantador rincón en la terraza con una moderna silla colgante tipo huevo y un juego completo de comedor exterior" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/515034747_zbstva.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Encantador rincón en la terraza con una moderna silla colgante tipo huevo y un juego completo de comedor exterior" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Rincón de relajación</figcaption>
                 </figure>
             </div>
             <!-- 4. Vistas al mar -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/443747082_u9f8ch.webp" class="gallery-img img-fluid" alt="Espectacular vista despejada del mar Mediterráneo color turquesa desde el balcón privado" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/443747082_u9f8ch.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Espectacular vista despejada del mar Mediterráneo color turquesa desde el balcón privado" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Vistas panorámicas al mar</figcaption>
                 </figure>
             </div>
             <!-- 5. Dormitorio principal -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/444258292_xbgxdk.webp" class="gallery-img img-fluid" alt="Lujosa suite principal con una cama King-size de primera calidad, ropa de cama de alta gama y una decoración elegante" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/444258292_xbgxdk.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Lujosa suite principal con una cama King-size de primera calidad, ropa de cama de alta gama y una decoración elegante" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Dormitorio principal</figcaption>
                 </figure>
             </div>
             <!-- 6. Dormitorio de invitados -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/444258218_bdozwj.webp" class="gallery-img img-fluid" alt="Elegante segundo dormitorio con dos cómodas camas individuales y un sofisticado diseño interior" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/444258218_bdozwj.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Elegante segundo dormitorio con dos cómodas camas individuales y un sofisticado diseño interior" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Dormitorio de invitados</figcaption>
                 </figure>
             </div>
             <!-- 7. Comedor -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/444258766_ey0nig.webp" class="gallery-img img-fluid" alt="Espacio de comedor contemporáneo con una mesa de diseño y acceso directo a la terraza bañada por el sol" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/444258766_ey0nig.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Espacio de comedor contemporáneo con una mesa de diseño y acceso directo to la terraza bañada por el sol" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Comedor moderno</figcaption>
                 </figure>
             </div>
             <!-- 8. Piscina -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/443747267_rb8e9c.webp" class="gallery-img img-fluid" alt="Piscina cristalina ubicada en jardines subtropicales bellamente cuidados en Elviria" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/443747267_rb8e9c.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Piscina cristalina ubicada en jardines subtropicales bellamente cuidados en Elviria" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Piscina subtropical</figcaption>
                 </figure>
             </div>
             <!-- 9. Chiringuito -->
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/462417799_idco4p.webp" class="gallery-img img-fluid" alt="Tradicional chiringuito y restaurante junto al mar que ofrece una relajada experiencia gastronómica mediterránea" width="800" height="600" loading="lazy">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/462417799_idco4p.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Tradicional chiringuito y restaurante junto al mar que ofrece una relajada experiencia gastronómica mediterránea" width="800" height="600" loading="lazy">
                     <figcaption class="mt-2 text-muted">Chiringuito junto al mar</figcaption>
                 </figure>
             </div>
