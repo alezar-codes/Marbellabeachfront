@@ -42,7 +42,6 @@
     <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.11/index.global.min.js" defer></script>
     <script type="application/ld+json">
-[
 {
   "@context": "https://schema.org",
   "@type": "VacationRental",
@@ -50,85 +49,82 @@
   "description": "Direct booking for a premium 120m² beachfront apartment in Jardines de las Golondrinas, Elviria.",
   "identifier": "VFT/MA/621203",
   "url": "https://marbellabeachfront.es/en/",
-  "image": "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747082_1_wy7gyt.webp",
+  "additionalType": "http://www.productontology.org/id/Apartment",
+  "image": [
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747082_1_wy7gyt.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747116_vly9on.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747101_v38z1w.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747113_muepnd.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747115_oc2o6u.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747098_qfayq8.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747103_jdfyee.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/v1776955957/443747110_id4i4n.webp"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "ratingCount": "30"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Anna" },
+      "datePublished": "2026-04-15",
+      "reviewBody": "Amazing beachfront location, very clean and well-equipped apartment in Jardines de las Golondrinas.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+    }
+  ],
   "containsPlace": {
     "@type": "Apartment",
     "name": "Luxury 2-Bedroom Apartment with Sea Views",
-    "numberOfRooms": 2,
+    "numberOfRooms": "2",
+    "numberOfBedrooms": "2",
+    "numberOfBathroomsTotal": "2",
+    "additionalType": "http://www.productontology.org/id/Apartment",
     "occupancy": {
       "@type": "QuantitativeValue",
-      "maxValue": 4
+      "value": "4",
+      "maxValue": "4"
     },
+    "bed": [
+      "1 Large Double Bed",
+      "2 Single Beds"
+    ],
     "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Beachfront", "value": "true" },
-        { "@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": "true" },
-        { "@type": "LocationFeatureSpecification", "name": "High-speed WiFi", "value": "true" },
-        { "@type": "LocationFeatureSpecification", "name": "Private Parking", "value": "true" }
-      ],
+      { "@type": "LocationFeatureSpecification", "name": "Beachfront", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "High-speed WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Private Parking", "value": true }
+    ],
     "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jardines de las Golondrinas",
-    "addressLocality": "Marbella",
-    "addressRegion": "Andalusia",
-    "postalCode": "29604",
-    "addressCountry": "ES"
-    }
+      "@type": "PostalAddress",
+      "streetAddress": "Urbanización Jardines de las Golondrinas, Apt 204",
+      "addressLocality": "Marbella",
+      "addressRegion": "Andalusia",
+      "postalCode": "29604",
+      "addressCountry": "ES"
     },
     "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "36.4916", 
-    "longitude": "-4.7735"
-    },
-    "offers": {    "@type": "Offer",
+      "@type": "GeoCoordinates",
+      "latitude": "36.4916",
+      "longitude": "-4.7735"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
     "price": "70.00",
     "priceCurrency": "EUR",
     "priceValidUntil": "2026-12-31",
-    "description": "Price starts from 70 EUR per night in low season. Rates vary by season.",
-    "availability": "https://schema.org/InStock",
+    "availability": "http://schema.org/InStock",
     "url": "https://marbellabeachfront.es/en/#booking"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "9.7",
-    "ratingCount": "30"
-  },
-  "priceRange": "€€€",
-      "sameAs": [
-        "https://www.booking.com/Share-DUS432",
-        "https://www.airbnb.com/rooms/842041070115468929"
-      ]
-},
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is there a lift?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How far is the beach?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "1 min walk"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is parking free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, private gated parking"
-      }
-    }
+  "priceRange": "€€",
+  "sameAs": [
+    "https://www.booking.com/Share-DUS432",
+    "https://www.airbnb.com/rooms/842041070115468929"
   ]
 }
-]
 </script>
 <!-- Meta Pixel Code -->
 <script>
