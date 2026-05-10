@@ -195,7 +195,18 @@
                 "value": "4",
                 "maxValue": "4"
             },
-            "bed": ["1 Cama Doble Grande", "2 Camas Individuales"],
+            "bed": [
+                {
+                    "@type": "BedDetails",
+                    "numberOfBeds": 1,
+                    "type": "Cama Doble Grande"
+                },
+                {
+                    "@type": "BedDetails",
+                    "numberOfBeds": 2,
+                    "type": "Cama Individual"
+                }
+            ],
             "amenityFeature": [
                 { "@type": "LocationFeatureSpecification", "name": "Primera línea de playa", "value": true },
                 { "@type": "LocationFeatureSpecification", "name": "Piscina", "value": true },

@@ -195,7 +195,18 @@
                 "value": "4",
                 "maxValue": "4"
             },
-            "bed": ["1 Large Double Bed", "2 Single Beds"],
+            "bed": [
+                {
+                    "@type": "BedDetails",
+                    "numberOfBeds": 1,
+                    "type": "Large Double Bed"
+                },
+                {
+                    "@type": "BedDetails",
+                    "numberOfBeds": 2,
+                    "type": "Single Bed"
+                }
+            ],
             "amenityFeature": [
                 { "@type": "LocationFeatureSpecification", "name": "Beachfront", "value": true },
                 { "@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": true },
