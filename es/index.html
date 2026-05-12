@@ -147,25 +147,24 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Apartment",
+        "@type": ["VacationRental", "Apartment", "LodgingBusiness"],
         "name": "Marbella Beachfront | Apartamento de Lujo en Elviria",
-        "description": "Apartamento de lujo de 120 m² en primera línea de playa en Jardines de las Golondrinas, Elviria. 2 dormitorios, vistas al mar y acceso directo a la playa.",
+        "description": "Reserva directa de un apartamento premium de 120m² en primera línea de playa en Jardines de las Golondrinas, Elviria.",
         "identifier": "VFT/MA/621203",
         "url": "https://marbellabeachfront.es/es/",
-        "additionalType": [
-                "https://schema.org/VacationRental",
-                "http://www.productontology.org/id/Apartment"
-            ],
-            "potentialAction": {
-                "@type": "ReserveAction",
-                "target": {
-                  "@type": "EntryPoint",
-                  "urlTemplate": "https://marbellabeachfront.es/es/#booking",
-                  "inLanguage": "es",
-                  "actionPlatform": [
+        "telephone": "+37061028665",
+        "priceRange": "€70-€330 por noche",
+        "additionalType": ["Apartment"],
+        "potentialAction": {
+            "@type": "ReserveAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://marbellabeachfront.es/es/#booking",
+                "inLanguage": "es",
+                "actionPlatform": [
                     "http://schema.org/DesktopWebPlatform",
                     "http://schema.org/MobileWebPlatform"
-                  ]
+                ]
             }
         },
         "geo": {
@@ -202,32 +201,31 @@
                 "@type": "Review",
                 "author": { "@type": "Person", "name": "Anna" },
                 "datePublished": "2026-04-15",
-                "reviewBody": "Increíble ubicación frente al mar, apartamento muy limpio и bien equipado en Jardines de las Golondrinas.",
+                "reviewBody": "Increíble ubicación frente al mar, apartamento muy limpio y bien equipado en Jardines de las Golondrinas.",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5" }
             }
         ],
         "containsPlace": {
             "@type": "Apartment",
             "name": "Apartamento de Lujo de 2 Dormitorios con Vistas al Mar",
-            "numberOfRooms": "2",
-            "numberOfBedrooms": "2",
-            "numberOfBathroomsTotal": "2",
+            "additionalType": ["Accommodation"],
+            "numberOfRooms": 2,
+            "numberOfBedrooms": 2,
+            "numberOfBathroomsTotal": 2,
             "occupancy": {
                 "@type": "QuantitativeValue",
-                "value": "4",
-                "maxValue": "4"
+                "value": 4,
+                "maxValue": 4
             },
             "bed": [
                 {
                     "@type": "BedDetails",
                     "numberOfBeds": 1,
-                    "type": "Cama Doble Grande",
                     "typeOfBed": "Double"
                 },
                 {
                     "@type": "BedDetails",
                     "numberOfBeds": 2,
-                    "type": "Cama Individual",
                     "typeOfBed": "Single"
                 }
             ],
@@ -244,11 +242,6 @@
                 "addressRegion": "Andalucía",
                 "postalCode": "29604",
                 "addressCountry": "ES"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 36.4916,
-                "longitude": -4.7735
             }
         },
         "offers": {
@@ -256,10 +249,9 @@
             "price": "70.00",
             "priceCurrency": "EUR",
             "priceValidUntil": "2026-12-31",
-            "availability": "http://schema.org/InStock",
+            "availability": "https://schema.org/InStock",
             "url": "https://marbellabeachfront.es/es/#booking"
         },
-        "priceRange": "€€",
         "sameAs": [
             "https://www.booking.com/Share-DUS432",
             "https://www.airbnb.com/rooms/842041070115468929"
@@ -338,13 +330,13 @@
         <div class="row align-items-center">
             <div class="col-lg-6 mb-5 mb-lg-0">
                 <h2 class="display-5 mb-4">Tu escapada en primera línea</h2>
-                <p class="lead text-muted">Un espacio perfecto para quienes valoran la tranquilidad, la estética и el sonido de las olas.</p>
-                <p>Amplios apartamentos (120 m²) ubicados en la exclusiva urbanización de Elviria community.</p>
+                <p class="lead text-muted">Un espacio perfecto para quienes valoran la tranquilidad, la estética y el sonido de las olas.</p>
+                <p>Amplios apartamentos (120 m²) ubicados en la exclusiva urbanización en Elviria.</p>
                 <ul class="list-unstyled mb-3">
                     <li><i class="fa fa-bed me-2"></i>Dormitorio principal con cama King-size premium y baño en suite.</li>
                     <li><i class="fa fa-bed me-2"></i>Segundo dormitorio con dos camas individuales cómodas, perfecto para familia o amigos.</li>
                 </ul>
-                <p>Disfruta de 2 baños и una gran terraza donde el aroma de los pinos se mezcla con la brisa marina.</p>
+                <p>Disfruta de 2 baños y una gran terraza donde el aroma de los pinos se mezcla con la brisa marina.</p>
                 <div class="row g-4 mt-2">
                     <div class="col-6"><strong><i class="fa fa-expand me-2"></i> 120 m² de superficie</strong></div>
                     <div class="col-6"><strong><i class="fa fa-umbrella-beach me-2"></i> 100m al mar</strong></div>
@@ -356,13 +348,13 @@
                 <div class="row g-2">
                     <div class="col-12">
                         <figure class="gallery-item">
-                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Interior elegante de la sala de estar con muebles modernos и vistas al mar" width="800" height="600" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Interior elegante de la sala de estar con muebles modernos y vistas al mar" width="800" height="600" loading="lazy" decoding="async">
                             <figcaption class="mt-2 text-muted">Interior del apartamento</figcaption>
                         </figure>
                     </div>
                     <div class="col-6">
                         <figure class="gallery-item">
-                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747339_nz2vhu.webp" class="gallery-img img-fluid" alt="Amplia terraza privada con asientos al aire libre и vistas al jardín" width="600" height="400" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747339_nz2vhu.webp" class="gallery-img img-fluid" alt="Amplia terraza privada con asientos al aire libre y vistas al jardín" width="600" height="400" loading="lazy" decoding="async">
                             <figcaption class="mt-2 text-muted">Terraza</figcaption>
                         </figure>
                     </div>
@@ -381,12 +373,12 @@
         <div class="container">
             <h2 class="text-center mb-5">Características del complejo</h2>
             <div class="amenities-grid">
-                <div class="amenity-card reveal"><i class="fa fa-swimming-pool"></i><h3>Piscinas</h3><p>Disfruta de varias piscinas exteriores con terrazas и jardines subtropicales.</p></div>
+                <div class="amenity-card reveal"><i class="fa fa-swimming-pool"></i><h3>Piscinas</h3><p>Disfruta de varias piscinas exteriores con terrazas y jardines subtropicales.</p></div>
                 <div class="amenity-card reveal"><i class="fa fa-umbrella-beach"></i><h3>Primera línea</h3><p>Ubicación en primera línea con acceso directo a la playa de Elviria.</p></div>
                 <div class="amenity-card reveal"><i class="fa fa-shield-alt"></i><h3>Terreno cerrado</h3><p>Terreno cerrado para total tranquilidad.</p></div>
                 <div class="amenity-card reveal"><i class="fa fa-parking"></i><h3>Parking privado</h3><p>Estacionamiento incluido dentro del complejo residencial.</p></div>
-                <div class="amenity-card reveal"><i class="fa fa-tree"></i><h3>Jardines tropicales</h3><p>Senderos verdes rodeados de jardines tropicales и pinos aromáticos.</p></div>
-                <div class="amenity-card reveal"><i class="fa fa-walking"></i><h3>A pocos pasos</h3><p>Restaurantes и beach clubs a solo unos minutos caminando.</p></div>
+                <div class="amenity-card reveal"><i class="fa fa-tree"></i><h3>Jardines tropicales</h3><p>Senderos verdes rodeados de jardines tropicales y pinos aromáticos.</p></div>
+                <div class="amenity-card reveal"><i class="fa fa-walking"></i><h3>A pocos pasos</h3><p>Restaurantes y beach clubs a solo unos minutos caminando.</p></div>
             </div>
         </div>
     </section>
@@ -415,19 +407,19 @@
         <div class="row g-3">
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Elegante sala de estar con sofás lujosos, diseño contemporáneo и un ambiente luminoso и espacioso" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Elegante sala de estar con sofás lujosos, diseño contemporáneo y un ambiente luminoso y espacioso" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Amplia sala de estar</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443746488_dv4bmi.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Gran terraza privada con muebles de descanso de primera calidad и hermosas vistas a los pinos и al mar Mediterráneo" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443746488_dv4bmi.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Gran terraza privada con muebles de descanso de primera calidad y hermosas vistas a los pinos y al mar Mediterráneo" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Terraza privada</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/515034747_zbstva.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Encantador rincón en la terraza con una moderna silla colgante tipo huevo и un juego completo de comedor exterior" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/515034747_zbstva.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Encantador rincón en la terraza con una moderna silla colgante tipo huevo y un juego completo de comedor exterior" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Rincón de relajación</figcaption>
                 </figure>
             </div>
@@ -439,19 +431,19 @@
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258292_xbgxdk.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Lujosa suite principal con una cama King-size de primera calidad, ropa de cama de alta gama и una decoración elegante" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258292_xbgxdk.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Lujosa suite principal con una cama King-size de primera calidad, ropa de cama de alta gama y una decoración elegante" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Dormitorio principal</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258218_bdozwj.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Elegante segundo dormitorio con dos cómodas camas individuales и un sofisticado diseño interior" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258218_bdozwj.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Elegante segundo dormitorio con dos cómodas camas individuales y un sofisticado diseño interior" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Dormitorio de invitados</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258766_ey0nig.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Espacio de comedor contemporáneo con una mesa de diseño и acceso directo to la terraza bañada por el sol" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258766_ey0nig.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Espacio de comedor contemporáneo con una mesa de diseño y acceso directo a la terraza bañada por el sol" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Comedor moderno</figcaption>
                 </figure>
             </div>
@@ -463,7 +455,7 @@
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/462417799_idco4p.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Tradicional chiringuito и restaurante junto al mar que ofrece una relajada experiencia gastronómica mediterránea" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/462417799_idco4p.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Tradicional chiringuito y restaurante junto al mar que ofrece una relajada experiencia gastronómica mediterránea" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Chiringuito junto al mar</figcaption>
                 </figure>
             </div>
@@ -481,7 +473,7 @@
                 </div>
                 <div class="review-card reveal">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Precioso apartamento con todo lo que puedas necesitar. Camas cómodas и muebles очень bonitos. Excelente ubicación para playa, bares и restaurantes."</p>
+                    <p>"Precioso apartamento con todo lo que puedas necesitar. Camas cómodas y muebles muy bonitos. Excelente ubicación para playa, bares y restaurantes."</p>
                     <cite>- Andrew, Reino Unido</cite>
                 </div>
                 <div class="review-card reveal">
