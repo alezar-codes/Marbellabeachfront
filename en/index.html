@@ -33,8 +33,9 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://res.cloudinary.com">
     
-    <link rel="preload" as="image" href="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp" fetchpriority="high">
-    
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747082_u9f8ch.webp" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_1200/443747082_u9f8ch.webp" media="(min-width: 768px)" fetchpriority="high">
+
     <style>
         :root { --gold: #c19b76; --dark: #2c2c2c; --light-bg: #fdfbf7; --dark-green: #1B3022; --sand: #F9F7F2; }
  body { font-family: Montserrat, sans-serif; color: var(--dark); background-color: var(--light-bg); }
@@ -125,10 +126,10 @@
  .fab, .fas, .fa { display: inline-block; min-width: 1em; text-align: center; }
     </style>
     
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" >
     
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap">
@@ -178,13 +179,13 @@
   },
   "image": [
     "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/v1776955957/443747082_1_wy7gyt.webp",
-    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955957/443747116_vly9on.webp",
-    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955957/443747101_v38z1w.webp",
-    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955957/443747113_muepnd.webp",
-    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955957/443747115_oc2o6u.webp",
-    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955957/443747098_qfayq8.webp",
-    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955957/443747103_jdfyee.webp",
-    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955957/443747110_id4i4n.webp"
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955957/443747116_vly9on.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955957/443747101_v38z1w.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955957/443747113_muepnd.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955957/443747115_oc2o6u.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955957/443747098_qfayq8.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955957/443747103_jdfyee.webp",
+    "https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955957/443747110_id4i4n.webp"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -284,7 +285,15 @@
     </nav>
     
     <header class="hero">
-        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp" alt="Marbella Beachfront Hero" class="hero-image" fetchpriority="high" loading="eager">
+        <picture>
+            <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747082_u9f8ch.webp">
+            <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_1200/443747082_u9f8ch.webp">
+            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_1200/443747082_u9f8ch.webp" 
+                alt="Marbella Beachfront Hero" 
+                class="hero-image" 
+                fetchpriority="high" 
+                decoding="async">
+        </picture>
         <div class="container">
             <div class="lang-switcher mb-4 d-flex justify-content-end">
                 <a class="lang-link active" href="./">EN</a>
@@ -344,19 +353,19 @@
                 <div class="row g-2">
                     <div class="col-12">
                         <figure class="gallery-item">
-                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Elegant living room interior with modern furniture and sea views" width="800" height="600" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Elegant living room interior with modern furniture and sea views" width="800" height="600" loading="lazy" decoding="async">
                             <figcaption class="mt-2 text-muted">Apartment Interior</figcaption>
                         </figure>
                     </div>
                     <div class="col-6">
                         <figure class="gallery-item">
-                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747339_nz2vhu.webp" class="gallery-img img-fluid" alt="Spacious private terrace with outdoor seating and lush garden views" width="600" height="400" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747339_nz2vhu.webp" class="gallery-img img-fluid" alt="Spacious private terrace with outdoor seating and lush garden views" width="600" height="400" loading="lazy" decoding="async">
                             <figcaption class="mt-2 text-muted">Terrace</figcaption>
                         </figure>
                     </div>
                     <div class="col-6">
                         <figure class="gallery-item">
-                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955352/443747416_nkndro.webp" class="gallery-img img-fluid" alt="Exterior view of the Marbella Beachfront residential complex" width="600" height="400" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955352/443747416_nkndro.webp" class="gallery-img img-fluid" alt="Exterior view of the Marbella Beachfront residential complex" width="600" height="400" loading="lazy" decoding="async">
                             <figcaption class="mt-2 text-muted">Tropical garden</figcaption>
                         </figure>
                     </div>
@@ -403,55 +412,55 @@
         <div class="row g-3">
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Elegant living room with plush sofas, contemporary design, and a bright, airy atmosphere" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Elegant living room with plush sofas, contemporary design, and a bright, airy atmosphere" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Spacious Living Area</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443746488_dv4bmi.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Large private terrace featuring premium outdoor lounge furniture with beautiful views of the pine trees and the Mediterranean sea" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443746488_dv4bmi.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Large private terrace featuring premium outdoor lounge furniture with beautiful views of the pine trees and the Mediterranean sea" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Private Terrace</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/515034747_zbstva.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Charming terrace nook with a stylish hanging egg chair and a complete outdoor dining set" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/515034747_zbstva.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Charming terrace nook with a stylish hanging egg chair and a complete outdoor dining set" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Relaxation Corner</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747082_u9f8ch.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Spectacular, unobstructed view of the turquoise Mediterranean Sea" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747082_u9f8ch.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Spectacular, unobstructed view of the turquoise Mediterranean Sea" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Panoramic Sea Views</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258292_xbgxdk.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Luxurious master suite featuring a premium King-size bed, high-end linens, and elegant decor" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444258292_xbgxdk.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Luxurious master suite featuring a premium King-size bed, high-end linens, and elegant decor" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Master Bedroom</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258218_bdozwj.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Stylish second bedroom with two comfortable twin beds and sophisticated interior design" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444258218_bdozwj.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Stylish second bedroom with two comfortable twin beds and sophisticated interior design" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Bedroom</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258766_ey0nig.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Contemporary dining space with a designer table and direct access to the sun-drenched terrace" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444258766_ey0nig.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Contemporary dining space with a designer table and direct access to the sun-drenched terrace" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Dining Area</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747267_rb8e9c.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Crystal clear swimming pool set within beautifully manicured subtropical gardens in Elviria" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747267_rb8e9c.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Crystal clear swimming pool set within beautifully manicured subtropical gardens in Elviria" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Subtropical Pool</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/462417799_idco4p.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Traditional seaside chiringuito bar and restaurant offering a relaxed Mediterranean dining experience" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/462417799_idco4p.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Traditional seaside chiringuito bar and restaurant offering a relaxed Mediterranean dining experience" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Seaside Chiringuito</figcaption>
                 </figure>
             </div>

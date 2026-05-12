@@ -33,8 +33,9 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://res.cloudinary.com">
     
-    <link rel="preload" as="image" href="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp" fetchpriority="high">
-    
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747082_u9f8ch.webp" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_1200/443747082_u9f8ch.webp" media="(min-width: 768px)" fetchpriority="high">
+
     <style>
         :root { --gold: #c19b76; --dark: #2c2c2c; --light-bg: #fdfbf7; --dark-green: #1B3022; --sand: #F9F7F2; }
  body { font-family: Montserrat, sans-serif; color: var(--dark); background-color: var(--light-bg); }
@@ -125,11 +126,11 @@
  .fab, .fas, .fa { display: inline-block; min-width: 1em; text-align: center; }
     </style>
     
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" media="print" onload="this.media='all'">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" >
+     
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -284,7 +285,15 @@
     </nav>
     
     <header class="hero">
-        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp" alt="Marbella Beachfront Hero" class="hero-image" fetchpriority="high" loading="eager">
+       <picture>
+            <source media="(max-width: 767px)" srcset="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747082_u9f8ch.webp">
+            <source media="(min-width: 768px)" srcset="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_1200/443747082_u9f8ch.webp">
+            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_1200/443747082_u9f8ch.webp" 
+                alt="Marbella Beachfront Hero" 
+                class="hero-image" 
+                fetchpriority="high" 
+                decoding="async">
+        </picture>
         <div class="container">
             <div class="lang-switcher mb-4 d-flex justify-content-end">
                 <a class="lang-link" href="/en/">EN</a>
@@ -344,19 +353,19 @@
                 <div class="row g-2">
                     <div class="col-12">
                         <figure class="gallery-item">
-                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Interior elegante de la sala de estar con muebles modernos y vistas al mar" width="800" height="600" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Interior elegante de la sala de estar con muebles modernos y vistas al mar" width="800" height="600" loading="lazy" decoding="async">
                             <figcaption class="mt-2 text-muted">Interior del apartamento</figcaption>
                         </figure>
                     </div>
                     <div class="col-6">
                         <figure class="gallery-item">
-                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747339_nz2vhu.webp" class="gallery-img img-fluid" alt="Amplia terraza privada con asientos al aire libre y vistas al jardín" width="600" height="400" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747339_nz2vhu.webp" class="gallery-img img-fluid" alt="Amplia terraza privada con asientos al aire libre y vistas al jardín" width="600" height="400" loading="lazy" decoding="async">
                             <figcaption class="mt-2 text-muted">Terraza</figcaption>
                         </figure>
                     </div>
                     <div class="col-6">
                         <figure class="gallery-item">
-                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/v1776955352/443747416_nkndro.webp" class="gallery-img img-fluid" alt="Vista exterior del complejo residencial Marbella Beachfront" width="600" height="400" loading="lazy" decoding="async">
+                            <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/v1776955352/443747416_nkndro.webp" class="gallery-img img-fluid" alt="Vista exterior del complejo residencial Marbella Beachfront" width="600" height="400" loading="lazy" decoding="async">
                             <figcaption class="mt-2 text-muted">Complejo</figcaption>
                         </figure>
                     </div>
@@ -403,55 +412,55 @@
         <div class="row g-3">
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Elegante sala de estar con sofás lujosos, diseño contemporáneo y un ambiente luminoso y espacioso" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444259035_awlfx0.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Elegante sala de estar con sofás lujosos, diseño contemporáneo y un ambiente luminoso y espacioso" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Amplia sala de estar</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443746488_dv4bmi.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Gran terraza privada con muebles de descanso de primera calidad y hermosas vistas a los pinos y al mar Mediterráneo" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443746488_dv4bmi.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Gran terraza privada con muebles de descanso de primera calidad y hermosas vistas a los pinos y al mar Mediterráneo" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Terraza privada</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/515034747_zbstva.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Encantador rincón en la terraza con una moderna silla colgante tipo huevo y un juego completo de comedor exterior" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/515034747_zbstva.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Encantador rincón en la terraza con una moderna silla colgante tipo huevo y un juego completo de comedor exterior" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Rincón de relajación</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Espectacular vista despejada del mar Mediterráneo color turquesa desde el balcón privado" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_1200/443747082_u9f8ch.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Espectacular vista despejada del mar Mediterráneo color turquesa desde el balcón privado" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Vistas panorámicas al mar</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258292_xbgxdk.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Lujosa suite principal con una cama King-size de primera calidad, ropa de cama de alta gama y una decoración elegante" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444258292_xbgxdk.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Lujosa suite principal con una cama King-size de primera calidad, ropa de cama de alta gama y una decoración elegante" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Dormitorio principal</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258218_bdozwj.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Elegante segundo dormitorio con dos cómodas camas individuales y un sofisticado diseño interior" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444258218_bdozwj.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Elegante segundo dormitorio con dos cómodas camas individuales y un sofisticado diseño interior" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Dormitorio de invitados</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258766_ey0nig.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Espacio de comedor contemporáneo con una mesa de diseño y acceso directo a la terraza bañada por el sol" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/444258766_ey0nig.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Espacio de comedor contemporáneo con una mesa de diseño y acceso directo a la terraza bañada por el sol" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Comedor moderno</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747267_rb8e9c.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Piscina cristalina ubicada en jardines subtropicales bellamente cuidados en Elviria" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/443747267_rb8e9c.webp" class="gallery-img img-fluid" alt="Marbella vacation rental - Piscina cristalina ubicada en jardines subtropicales bellamente cuidados en Elviria" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Piscina subtropical</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/462417799_idco4p.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Tradicional chiringuito y restaurante junto al mar que ofrece una relajada experiencia gastronómica mediterránea" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,dpr_auto,w_600/462417799_idco4p.webp" class="gallery-img img-fluid" alt="Jardines de las Golondrinas - Tradicional chiringuito y restaurante junto al mar que ofrece una relajada experiencia gastronómica mediterránea" width="800" height="600" loading="lazy" decoding="async">
                     <figcaption class="mt-2 text-muted">Chiringuito junto al mar</figcaption>
                 </figure>
             </div>
