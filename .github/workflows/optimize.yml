@@ -1,0 +1,20 @@
+name: Optimize Website
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Сжатие HTML, CSS и JS
+      - name: Minify HTML/CSS/JS
+        uses: flushing-v/minify-action@master
+        with:
+          add_suffix: false
+          
+      # Сжатие SVG иконок (если есть)
+      - name: Optimize SVG
+        uses: external-graphics/svgo-action@main
+        
+      - name: Deploy to GitHub Pages
+        # Ваш стандартный процесс деплоя
