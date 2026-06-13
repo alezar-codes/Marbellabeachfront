@@ -1,4 +1,8 @@
 User-agent: *
+Disallow: /en/places.html
+Disallow: /es/places.html
+Disallow: /en/checkin.html
+Disallow: /es/checkin.html
 Allow: /
 
 Sitemap: https://marbellabeachfront.es/sitemap.xml
