@@ -3,9 +3,8 @@ name: Optimize and Deploy Website
 on:
   push:
     branches:
-      - master # Укажите ваше название ветки (main или master)
+      - master # Теперь триггер настроен на ветку master
 
-# Разрешения, необходимые для автоматического деплоя на GitHub Pages
 permissions:
   contents: write
   pages: write
@@ -15,30 +14,27 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. Скачиваем актуальный код из репозитория
+      # 1. Скачиваем код из ветки master
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Оптимизируем и сжимаем HTML, CSS и JS файлы прямо на лету
-      # Используем проверенный и стабильный экшен
-      - name: Minify HTML, CSS, and JS
-        uses: jakejarvis/minify-action@master
+      # 2. Сжимаем HTML, CSS и JS файлы
+      - name: Minify Assets
+        uses: nmarus/minify-action@v1
         with:
-          # Сжимаем всё в текущей папке без изменения структуры и имен файлов
-          html-src: './**/*.html'
-          css-src: './**/*.css'
-          js-src: './**/*.js'
+          source: './'
+          output: './'
 
-      # 3. Оптимизируем SVG иконки (например, ваш favicon.svg), если они есть
+      # 3. Оптимизируем SVG иконки
       - name: Optimize SVG Icons
-        uses: bcomnes/svgo-action@v1
+        uses: cdgriffith/svgo-action@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # 4. Деплоим сжатую и чистую версию на GitHub Pages
+      # 4. Деплоим сжатую версию в ветку gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ # Указывает, что деплоить нужно корень проекта
-          publish_branch: gh-pages # Ветка, куда запишется готовый результат
+          publish_dir: ./
+          publish_branch: gh-pages
