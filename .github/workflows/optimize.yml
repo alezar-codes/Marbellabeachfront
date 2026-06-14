@@ -3,7 +3,7 @@ name: Optimize and Deploy Website
 on:
   push:
     branches:
-      - master # Теперь триггер настроен на ветку master
+      - master
 
 permissions:
   contents: write
@@ -14,24 +14,37 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1. Скачиваем код из ветки master
+      # 1. Скачиваем код (Официальный экшен GitHub)
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Сжимаем HTML, CSS и JS файлы
-      - name: Minify Assets
-        uses: nmarus/minify-action@v1
+      # 2. Устанавливаем Node.js (Официальный экшен GitHub)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          source: './'
-          output: './'
+          node-version: '20'
 
-      # 3. Оптимизируем SVG иконки
-      - name: Optimize SVG Icons
-        uses: cdgriffith/svgo-action@v3
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      # 3. Устанавливаем проверенные инструменты напрямую через npm и сжимаем файлы
+      - name: Minify Assets (HTML/CSS/JS)
+        run: |
+          npm install -g html-minifier-terser clean-css-cli terser
+          
+          # Сжимаем HTML (если файлов несколько, они все обработаются)
+          for f in $(find . -name "*.html" -not -path "*/node_modules/*"); do
+            html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o "$f" "$f"
+          done
+          
+          # Сжимаем CSS
+          for f in $(find . -name "*.css" -not -path "*/node_modules/*"); do
+            cleancss -o "$f" "$f"
+          done
+          
+          # Сжимаем JS (пропускаем уже минимизированные файлы)
+          for f in $(find . -name "*.js" -not -path "*.min.js" -not -path "*/node_modules/*"); do
+            terser "$f" --compress --mangle -o "$f"
+          done
 
-      # 4. Деплоим сжатую версию в ветку gh-pages
+      # 4. Деплоим готовую версию в ветку gh-pages (Официальный экшен сообщества)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
