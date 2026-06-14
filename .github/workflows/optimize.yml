@@ -3,7 +3,7 @@ name: Optimize and Deploy Website
 on:
   push:
     branches:
-      - main # Укажите ваше название ветки (main или master)
+      - master # Укажите ваше название ветки (main или master)
 
 # Разрешения, необходимые для автоматического деплоя на GitHub Pages
 permissions:
