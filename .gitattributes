@@ -1,0 +1,12 @@
+# Set default behavior to automatic text normalization with LF line endings
+* text=auto eol=lf
+
+# Explicitly declare binary files that should not be modified
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.svg text eol=lf
+*.ics text eol=lf
