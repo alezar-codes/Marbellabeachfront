@@ -92,3 +92,155 @@ html { scroll-behavior: smooth; }
     border-color: var(--gold) !important;
     box-shadow: 0 0 0 0.25rem rgba(193, 155, 118, 0.2) !important;
 }
+
+/* Lightbox Modal CSS */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox-modal.show {
+    display: flex;
+    opacity: 1;
+}
+.lightbox-content {
+    position: relative;
+    max-width: 85%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.lightbox-caption {
+    color: #fff;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 10010;
+    transition: color 0.2s, transform 0.2s;
+    user-select: none;
+}
+.lightbox-close:hover {
+    color: var(--gold);
+    transform: scale(1.1);
+}
+.lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 36px;
+    font-weight: 300;
+    padding: 16px;
+    cursor: pointer;
+    z-index: 10010;
+    transition: color 0.2s, transform 0.2s;
+    user-select: none;
+}
+.lightbox-prev:hover, .lightbox-next:hover {
+    color: var(--gold);
+    transform: translateY(-50%) scale(1.1);
+}
+.lightbox-prev {
+    left: 30px;
+}
+.lightbox-next {
+    right: 30px;
+}
+@media (max-width: 768px) {
+    .lightbox-prev, .lightbox-next {
+        font-size: 24px;
+        padding: 8px;
+    }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+    .lightbox-close { top: 15px; right: 20px; font-size: 35px; }
+    .lightbox-content { max-width: 95%; max-height: 75%; }
+}
+
+/* Sticky Navbar Language Switcher */
+.lang-switcher-nav {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+}
+.lang-switcher-nav .nav-link {
+    color: var(--dark-green) !important;
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+}
+.lang-switcher-nav .nav-link:hover,
+.lang-switcher-nav .nav-link.active {
+    opacity: 1;
+    color: var(--gold) !important;
+}
+
+/* Hero Gradient and Scroll Indicator */
+.hero {
+    background: linear-gradient(135deg, rgba(27, 48, 34, 0.85) 0%, rgba(193, 155, 118, 0.4) 100%), rgba(0, 0, 0, 0.2);
+}
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.scroll-indicator .mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    position: relative;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+}
+.scroll-indicator .mouse:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.scroll-indicator .wheel {
+    width: 4px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 1.6s infinite;
+}
+@keyframes scroll-wheel {
+    0% { top: 8px; opacity: 1; }
+    50% { top: 18px; opacity: 0; }
+    100% { top: 8px; opacity: 0; }
+}
