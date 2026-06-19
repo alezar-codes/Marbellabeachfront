@@ -6,88 +6,110 @@ document.addEventListener('DOMContentLoaded', function() {
     var lang = document.documentElement.lang || 'en';
     var reservedText = (lang === 'es') ? 'Reservado' : 'Reserved';
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        locale: lang,
-        firstDay: 1,
-        headerToolbar: {
-            left: 'prev',
-            center: 'title',
-            right: 'next'
-        },
-        events: function(info, successCallback, failureCallback) {
-           
-            const icalUrl = 'https://calendar.google.com/calendar/ical/81d94c0e97baf81fbf0e24dd54fb90c6a559ccca45ba65b2242572a864290a42@group.calendar.google.com/private-d93b1f1a7c77ca3f5d591d38539c7baa/basic.ics';
+    // Global reference to the validation function
+    var validateBookingFunc;
 
-            fetch('/calendar.ics')
-                .then(response => {
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    return response.text();
-                })
-                .then(data => {
-                    var jcalData = ICAL.parse(data);
-                    var comp = new ICAL.Component(jcalData);
-                    var vevents = comp.getAllSubcomponents('vevent');
+    // Инициализируем форму сразу, чтобы поля ввода были интерактивны
+    initBookingForm();
 
-                    var events = vevents.map(function(vevent) {
-                        var event = new ICAL.Event(vevent);
-                        var endDate = event.endDate.toJSDate();
-                        
-                        return {
-                            title: reservedText,
-                            start: event.startDate.toJSDate(),
-                            end: endDate,
-                            display: 'background',
-                            backgroundColor: '#f8d7da',
-                            allDay: true
-                        };
-                    });
-                    window.bookedEvents = events;
-                    successCallback(events);
-                    initBookingForm();
-                })
-                .catch(error => {
-                    console.error('Calendar error:', error);
-                    const secondaryProxiedUrl = 'https://corsproxy.io/?' + encodeURIComponent(icalUrl);
-                    fetch(secondaryProxiedUrl)
-                        .then(response => {
-                            if (!response.ok) throw new Error('Secondary proxy failed');
-                            return response.text();
-                        })
-                        .then(data => {
-                             var jcalData = ICAL.parse(data);
-                             var comp = new ICAL.Component(jcalData);
-                             var vevents = comp.getAllSubcomponents('vevent');
-                             var events = vevents.map(function(vevent) {
-                                var event = new ICAL.Event(vevent);
-                                return { 
-                                    title: reservedText, 
-                                    start: event.startDate.toJSDate(), 
-                                    end: event.endDate.toJSDate(), 
-                                    display: 'background', 
-                                    backgroundColor: '#f8d7da',
-                                    allDay: true
-                                };
-                             });
-                             window.bookedEvents = events;
-                             successCallback(events);
-                             initBookingForm();
-                        })
-                        .catch(err => {
-                            console.error('All proxies failed', err);
-                            failureCallback(err);
-                            // Инициализируем форму без событий в случае ошибки загрузки
-                            initBookingForm();
-                        });
-                });
-        },
-        dayMaxEvents: 0,
-        height: 'auto',
-        contentHeight: 250,
-        aspectRatio: 3.5
+    // Настраиваем IntersectionObserver для ленивой загрузки календаря
+    var observer = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                initCalendar();
+                obs.unobserve(calendarEl);
+            }
+        });
+    }, {
+        rootMargin: '400px 0px', // Начать загрузку за 400px до появления во вьюпорте
+        threshold: 0.01
     });
 
-    calendar.render();
+    observer.observe(calendarEl);
+
+    function initCalendar() {
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: lang,
+            firstDay: 1,
+            headerToolbar: {
+                left: 'prev',
+                center: 'title',
+                right: 'next'
+            },
+            events: function(info, successCallback, failureCallback) {
+               
+                const icalUrl = 'https://calendar.google.com/calendar/ical/81d94c0e97baf81fbf0e24dd54fb90c6a559ccca45ba65b2242572a864290a42@group.calendar.google.com/private-d93b1f1a7c77ca3f5d591d38539c7baa/basic.ics';
+
+                fetch('/calendar.ics')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.text();
+                    })
+                    .then(data => {
+                        var jcalData = ICAL.parse(data);
+                        var comp = new ICAL.Component(jcalData);
+                        var vevents = comp.getAllSubcomponents('vevent');
+
+                        var events = vevents.map(function(vevent) {
+                            var event = new ICAL.Event(vevent);
+                            var endDate = event.endDate.toJSDate();
+                            
+                            return {
+                                title: reservedText,
+                                start: event.startDate.toJSDate(),
+                                end: endDate,
+                                display: 'background',
+                                backgroundColor: '#f8d7da',
+                                allDay: true
+                            };
+                        });
+                        window.bookedEvents = events;
+                        successCallback(events);
+                        if (validateBookingFunc) validateBookingFunc();
+                    })
+                    .catch(error => {
+                        console.error('Calendar error:', error);
+                        const secondaryProxiedUrl = 'https://corsproxy.io/?' + encodeURIComponent(icalUrl);
+                        fetch(secondaryProxiedUrl)
+                            .then(response => {
+                                if (!response.ok) throw new Error('Secondary proxy failed');
+                                return response.text();
+                            })
+                            .then(data => {
+                                 var jcalData = ICAL.parse(data);
+                                 var comp = new ICAL.Component(jcalData);
+                                 var vevents = comp.getAllSubcomponents('vevent');
+                                 var events = vevents.map(function(vevent) {
+                                    var event = new ICAL.Event(vevent);
+                                    return { 
+                                        title: reservedText, 
+                                        start: event.startDate.toJSDate(), 
+                                        end: event.endDate.toJSDate(), 
+                                        display: 'background', 
+                                        backgroundColor: '#f8d7da',
+                                        allDay: true
+                                    };
+                                 });
+                                 window.bookedEvents = events;
+                                 successCallback(events);
+                                 if (validateBookingFunc) validateBookingFunc();
+                            })
+                            .catch(err => {
+                                console.error('All proxies failed', err);
+                                failureCallback(err);
+                                if (validateBookingFunc) validateBookingFunc();
+                            });
+                    });
+            },
+            dayMaxEvents: 0,
+            height: 'auto',
+            contentHeight: 250,
+            aspectRatio: 3.5
+        });
+
+        calendar.render();
+    }
 
     function initBookingForm() {
         var form = document.getElementById('booking-inquiry-form');
@@ -172,6 +194,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             enableSubmit(start, end, guestsVal);
         }
+        
+        // Expose validateBooking reference
+        validateBookingFunc = validateBooking;
 
         function disableSubmit() {
             whatsappBtn.classList.add('disabled');
