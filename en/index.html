@@ -530,13 +530,60 @@
         </div>
     </section>
     
-    <section id="booking" class="section-padding container text-center">
-        <h2 class="mb-5">Availability & Calendar</h2>
-        <div id="calendar-container" style="background:#fff;border-radius:20px;border:1px solid #eee;padding:10px;box-shadow:0 10px 40px rgba(0,0,0,.05);max-width:900px;margin:0 auto">
-            <div id="calendar"></div>
-        </div>
-        <div class="mt-5">
-            <a href="https://wa.me/37061028665" class="btn-direct text-decoration-none">Message on WhatsApp</a>
+    <section id="booking" class="section-padding container">
+        <h2 class="mb-5 text-center">Availability & Booking</h2>
+        <div class="row g-4 justify-content-center align-items-stretch">
+            <div class="col-lg-7">
+                <div id="calendar-container" style="background:#fff;border-radius:20px;border:1px solid #eee;padding:20px;box-shadow:0 10px 40px rgba(0,0,0,.05);height:100%;">
+                    <div id="calendar"></div>
+                    <div class="d-flex justify-content-center gap-3 mt-3 flex-wrap">
+                        <div class="d-flex align-items-center gap-2">
+                            <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background-color:#c8e6c9;border:1px solid rgba(0,0,0,0.05);"></span>
+                            <span class="small text-muted">Available</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background-color:#f8d7da;border:1px solid rgba(0,0,0,0.05);"></span>
+                            <span class="small text-muted">Reserved</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background-color:#eee;border:1px solid rgba(0,0,0,0.05);"></span>
+                            <span class="small text-muted">Past</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="booking-widget p-4 card border-0 shadow-sm" style="background:#fff;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.05) !important;height:100%;display:flex;flex-direction:column;justify-content:center;">
+                    <h3 class="h4 mb-4 text-center" style="color:var(--dark-green);font-weight:600;">Request a Booking</h3>
+                    <form id="booking-inquiry-form">
+                        <div class="mb-3">
+                            <label for="checkin" class="form-label small fw-semibold text-muted">Check-in Date</label>
+                            <input type="date" id="checkin" class="form-control form-control-lg border-2" style="border-radius:10px;font-size:0.95rem;" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="checkout" class="form-label small fw-semibold text-muted">Check-out Date</label>
+                            <input type="date" id="checkout" class="form-control form-control-lg border-2" style="border-radius:10px;font-size:0.95rem;" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="guests" class="form-label small fw-semibold text-muted">Number of Guests</label>
+                            <select id="guests" class="form-select form-select-lg border-2" style="border-radius:10px;font-size:0.95rem;">
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests (Max)</option>
+                            </select>
+                        </div>
+                        <div id="booking-status" class="alert alert-info py-2 px-3 mb-4 text-center small" style="border-radius:10px;display:block;">
+                            Select check-in and check-out dates.
+                        </div>
+                        <div class="text-center">
+                            <a href="https://wa.me/37061028665" id="whatsapp-inquiry-btn" class="btn-direct w-100 text-center text-decoration-none disabled" style="display:block;opacity:0.6;pointer-events:none;">
+                                <i class="fab fa-whatsapp me-2"></i> Book via WhatsApp
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     
