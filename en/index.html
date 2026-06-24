@@ -573,6 +573,43 @@
             min-width: 1em;
             text-align: center;
         }
+
+        /* Scroll Indicator */
+        .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; }
+        .scroll-indicator .mouse { width: 26px; height: 42px; border: 2px solid #fff; border-radius: 15px; position: relative; opacity: .8; transition: opacity .3s, transform .3s; }
+        .scroll-indicator .mouse:hover { opacity: 1; transform: scale(1.05); }
+        .scroll-indicator .wheel { width: 4px; height: 8px; background: #fff; border-radius: 2px; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); animation: scroll-wheel 1.6s infinite; }
+        @keyframes scroll-wheel { 0% { top: 8px; opacity: 1; } 50% { top: 18px; opacity: 0; } 100% { top: 8px; opacity: 0; } }
+
+        /* Hero gradient */
+        .hero { background: linear-gradient(135deg, rgba(27,48,34,.85) 0%, rgba(193,155,118,.4) 100%), rgba(0,0,0,.2); }
+
+        /* Navbar scrolled */
+        .navbar-glass.scrolled { box-shadow: 0 4px 20px rgba(193,155,118,.15); }
+
+        /* Stats strip */
+        .stats-strip { background: var(--dark-green); color: #fff; padding: 3.5rem 0; }
+        .stat-item { text-align: center; padding: 0.5rem; }
+        .stat-number { font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; }
+        .stat-label { font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; opacity: .7; margin-top: .4rem; display: block; }
+
+        /* Gallery overlay */
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; margin-bottom: 1rem; }
+        .gallery-item .g-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(27,48,34,.72) 0%, transparent 55%); opacity: 0; transition: opacity .35s ease; display: flex; align-items: flex-end; padding: .85rem 1rem; pointer-events: none; }
+        .gallery-item:hover .g-overlay { opacity: 1; }
+        .gallery-item:hover .gallery-img { filter: brightness(.85) scale(1.02); transition: filter .4s, transform .4s; }
+        .g-overlay span { color: #fff; font-weight: 600; font-size: .88rem; letter-spacing: .3px; }
+
+        /* Review avatar */
+        .review-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--dark-green); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.05rem; margin: 0 auto .75rem; }
+
+        /* Sticky CTA */
+        .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; background: var(--dark-green); color: #fff; padding: .7rem 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; transform: translateY(100%); transition: transform .4s cubic-bezier(.22,1,.36,1); box-shadow: 0 -4px 24px rgba(0,0,0,.18); }
+        .sticky-cta.visible { transform: translateY(0); }
+        .sticky-cta-text { font-size: .88rem; opacity: .82; }
+        .sticky-cta .btn-gold { background: var(--gold); color: #fff; border: none; padding: .5rem 1.6rem; border-radius: 25px; font-weight: 700; text-decoration: none; transition: background .25s; white-space: nowrap; display: inline-block; }
+        .sticky-cta .btn-gold:hover { background: #a88562; color: #fff; }
+        @media (max-width:576px) { .sticky-cta-text { display: none; } .sticky-cta { gap: .75rem; } }
     </style>
 
     <link rel="stylesheet"
@@ -749,9 +786,9 @@
                 alt="Marbella Beachfront Hero" class="hero-image" fetchpriority="high" decoding="async">
         </picture>
         <div class="container">
-            <div class="lang-switcher mb-4 d-flex justify-content-end">
-                <a class="lang-link active" href="./">EN</a>
-                <a class="lang-link ms-2" href="/es/">ES</a>
+            <div class="lang-switcher mb-4 d-flex justify-content-end" aria-label="Language selection">
+                <a class="lang-link active" href="./" aria-current="page" aria-label="View in English">EN</a>
+                <a class="lang-link ms-2" href="/es/" aria-label="Ver en Español">ES</a>
             </div>
             <div class="mb-4">
                 <span
@@ -850,6 +887,38 @@
         </div>
     </section>
 
+    <!-- Stats Strip -->
+    <section class="stats-strip" aria-label="Key stats">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-count="120" data-suffix=" m²">120 m²</span>
+                        <span class="stat-label">Apartment area</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-count="5" data-suffix="★">5★</span>
+                        <span class="stat-label">Guest rating</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-count="100" data-suffix="m">100m</span>
+                        <span class="stat-label">To the beach</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-count="9.7" data-suffix="" data-decimals="1">9.7</span>
+                        <span class="stat-label">On Booking.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section-padding bg-accent reveal" id="amenities">
         <div class="container">
             <h2 class="text-center mb-5">Complex highlights</h2>
@@ -911,6 +980,7 @@
                         class="gallery-img img-fluid"
                         alt="Jardines de las Golondrinas - Elegant living room with plush sofas, contemporary design, and a bright, airy atmosphere"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Spacious Living Area</span></div>
                     <figcaption class="mt-2 text-muted">Spacious Living Area</figcaption>
                 </figure>
             </div>
@@ -920,6 +990,7 @@
                         class="gallery-img img-fluid"
                         alt="Marbella vacation rental - Large private terrace featuring premium outdoor lounge furniture with beautiful views of the pine trees and the Mediterranean sea"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Private Terrace</span></div>
                     <figcaption class="mt-2 text-muted">Private Terrace</figcaption>
                 </figure>
             </div>
@@ -929,6 +1000,7 @@
                         class="gallery-img img-fluid"
                         alt="Jardines de las Golondrinas - Charming terrace nook with a stylish hanging egg chair and a complete outdoor dining set"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Relaxation Corner</span></div>
                     <figcaption class="mt-2 text-muted">Relaxation Corner</figcaption>
                 </figure>
             </div>
@@ -938,6 +1010,7 @@
                         class="gallery-img img-fluid"
                         alt="Marbella vacation rental - Spectacular, unobstructed view of the turquoise Mediterranean Sea"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Panoramic Sea Views</span></div>
                     <figcaption class="mt-2 text-muted">Panoramic Sea Views</figcaption>
                 </figure>
             </div>
@@ -947,6 +1020,7 @@
                         class="gallery-img img-fluid"
                         alt="Jardines de las Golondrinas - Luxurious master suite featuring a premium King-size bed, high-end linens, and elegant decor"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Master Bedroom</span></div>
                     <figcaption class="mt-2 text-muted">Master Bedroom</figcaption>
                 </figure>
             </div>
@@ -956,6 +1030,7 @@
                         class="gallery-img img-fluid"
                         alt="Marbella vacation rental - Stylish second bedroom with two comfortable twin beds and sophisticated interior design"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Bedroom</span></div>
                     <figcaption class="mt-2 text-muted">Bedroom</figcaption>
                 </figure>
             </div>
@@ -965,6 +1040,7 @@
                         class="gallery-img img-fluid"
                         alt="Jardines de las Golondrinas - Contemporary dining space with a designer table and direct access to the sun-drenched terrace"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Dining Area</span></div>
                     <figcaption class="mt-2 text-muted">Dining Area</figcaption>
                 </figure>
             </div>
@@ -974,6 +1050,7 @@
                         class="gallery-img img-fluid"
                         alt="Marbella vacation rental - Crystal clear swimming pool set within beautifully manicured subtropical gardens in Elviria"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Subtropical Pool</span></div>
                     <figcaption class="mt-2 text-muted">Subtropical Pool</figcaption>
                 </figure>
             </div>
@@ -983,6 +1060,7 @@
                         class="gallery-img img-fluid"
                         alt="Jardines de las Golondrinas - Traditional seaside chiringuito bar and restaurant offering a relaxed Mediterranean dining experience"
                         width="800" height="600" loading="lazy" decoding="async">
+                    <div class="g-overlay" aria-hidden="true"><span>Seaside Chiringuito</span></div>
                     <figcaption class="mt-2 text-muted">Seaside Chiringuito</figcaption>
                 </figure>
             </div>
@@ -994,19 +1072,22 @@
             <h2 class="text-center mb-5">Guest Reviews</h2>
             <div class="reviews-grid">
                 <div class="review-card reveal">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="review-avatar" aria-hidden="true">T</div>
+                    <div class="review-stars" aria-label="5 stars">⭐⭐⭐⭐⭐</div>
                     <p>"Very well equipped with everything needed, spacious, comfortable home in a quality community."
                     </p>
                     <cite>- Thomas, United Kingdom</cite>
                 </div>
                 <div class="review-card reveal">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="review-avatar" aria-hidden="true">A</div>
+                    <div class="review-stars" aria-label="5 stars">⭐⭐⭐⭐⭐</div>
                     <p>"Lovely apartment with everything you could possibly need. Comfortable beds and very nice
                         furnishings. Excellent location for beach, bars and restaurants."</p>
                     <cite>- Andrew, United Kingdom</cite>
                 </div>
                 <div class="review-card reveal">
-                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="review-avatar" aria-hidden="true">H</div>
+                    <div class="review-stars" aria-label="5 stars">⭐⭐⭐⭐⭐</div>
                     <p>"We loved our stay! Perfect location, amazing apartment. Much larger than we thought. Felt safe.
                         Have already booked to stay again next year."</p>
                     <cite>- Hayley, United Kingdom</cite>
@@ -1149,11 +1230,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.11/index.global.min.js" defer></script>
+    <!-- @fullcalendar/icalendar removed: parsing done by ical.js directly -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../calendar-init.js" defer></script>
     <script src="../animations.js" defer></script>
+
+    <!-- Sticky Book CTA -->
+    <div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Quick booking">
+        <span class="sticky-cta-text">🌊 Ready for Marbella?</span>
+        <a href="#booking" class="btn-gold">Book Direct</a>
+    </div>
 
 </body>
 
