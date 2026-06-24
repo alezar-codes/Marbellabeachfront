@@ -20,3 +20,8 @@ Thumbs.db
 # Build outputs
 dist/
 build/
+.htaccess
+lighthouse-en-v2.json
+lighthouse-en-v3.json
+lighthouse-es-v2.json
+lighthouse-es-v3.json
