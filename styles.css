@@ -91,23 +91,6 @@ html { scroll-behavior: smooth; }
 .booking-widget .form-select:focus {
     border-color: var(--gold) !important;
     box-shadow: 0 0 0 0.25rem rgba(193, 155, 118, 0.2) !important;
-}
-/* Sticky Navbar Language Switcher */
-.lang-switcher-nav {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.85rem;
-}
-.lang-switcher-nav .nav-link {
-    color: var(--dark-green) !important;
-    opacity: 0.6;
-    transition: opacity 0.2s, color 0.2s;
-}
-.lang-switcher-nav .nav-link:hover,
-.lang-switcher-nav .nav-link.active {
-    opacity: 1;
-    color: var(--gold) !important;
-}
 
 /* Hero Gradient and Scroll Indicator */
 .hero {
