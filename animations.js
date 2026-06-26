@@ -27,40 +27,7 @@
     });
 }());
 
-// Animated stat counters
-(function () {
-    var counters = document.querySelectorAll('[data-count]');
-    if (!counters.length) return;
 
-    var counterObserver = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-            if (!entry.isIntersecting) return;
-            var el = entry.target;
-            var target = parseFloat(el.dataset.count);
-            var suffix = el.dataset.suffix || '';
-            var prefix = el.dataset.prefix || '';
-            var decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
-            var duration = 1400;
-            var startTime = null;
-
-            function step(timestamp) {
-                if (!startTime) startTime = timestamp;
-                var progress = Math.min((timestamp - startTime) / duration, 1);
-                // Ease-out cubic
-                var eased = 1 - Math.pow(1 - progress, 3);
-                var current = eased * target;
-                el.textContent = prefix + current.toFixed(decimals) + suffix;
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                }
-            }
-            requestAnimationFrame(step);
-            observer.unobserve(el);
-        });
-    }, { threshold: 0.5 });
-
-    counters.forEach(function (el) { counterObserver.observe(el); });
-}());
 
 // Sticky Book CTA — appears after scrolling past the hero
 (function () {

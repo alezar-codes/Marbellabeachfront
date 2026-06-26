@@ -555,16 +555,8 @@
             background-color: var(--sand);
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all .8s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease-out, transform .75s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         .fab,
         .fas,
@@ -590,14 +582,15 @@
         /* Stats strip */
         .stats-strip { background: var(--dark-green); color: #fff; padding: 3.5rem 0; }
         .stat-item { text-align: center; padding: 0.5rem; }
-        .stat-number { font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; }
+        .stat-number { font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; font-variant-numeric: tabular-nums; min-width: 7ch; }
         .stat-label { font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; opacity: .7; margin-top: .4rem; display: block; }
 
         /* Gallery overlay */
-        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; margin-bottom: 1rem; }
-        .gallery-item .g-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(27,48,34,.72) 0%, transparent 55%); opacity: 0; transition: opacity .35s ease; display: flex; align-items: flex-end; padding: .85rem 1rem; pointer-events: none; }
-        .gallery-item:hover .g-overlay { opacity: 1; }
-        .gallery-item:hover .gallery-img { filter: brightness(.85) scale(1.02); transition: filter .4s, transform .4s; }
+        .gallery-item { margin-bottom: 1rem; }
+        .gallery-img-wrap { position: relative; overflow: hidden; border-radius: 12px; }
+        .gallery-img-wrap .g-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(27,48,34,.72) 0%, transparent 55%); opacity: 0; transition: opacity .35s ease; display: flex; align-items: flex-end; padding: .85rem 1rem; pointer-events: none; }
+        .gallery-img-wrap:hover .g-overlay { opacity: 1; }
+        .gallery-img-wrap:hover .gallery-img { filter: brightness(.88); }
         .g-overlay span { color: #fff; font-weight: 600; font-size: .88rem; letter-spacing: .3px; }
 
         /* Review avatar */
@@ -892,25 +885,25 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-6 col-md-3">
-                    <div class="stat-item reveal">
+                    <div class="stat-item">
                         <span class="stat-number" data-count="120" data-suffix=" m²">120 m²</span>
                         <span class="stat-label">Apartment area</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="stat-item reveal">
-                        <span class="stat-number" data-count="5" data-suffix="★">5★</span>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5" data-suffix=" ★">5 ★</span>
                         <span class="stat-label">Guest rating</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="stat-item reveal">
+                    <div class="stat-item">
                         <span class="stat-number" data-count="100" data-suffix="m">100m</span>
                         <span class="stat-label">To the beach</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="stat-item reveal">
+                    <div class="stat-item">
                         <span class="stat-number" data-count="9.7" data-suffix="" data-decimals="1">9.7</span>
                         <span class="stat-label">On Booking.com</span>
                     </div>
@@ -976,95 +969,112 @@
         <div class="row g-3">
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp"
-                        class="gallery-img img-fluid"
-                        alt="Jardines de las Golondrinas - Elegant living room with plush sofas, contemporary design, and a bright, airy atmosphere"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Spacious Living Area</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444259035_awlfx0.webp"
+                            class="gallery-img img-fluid"
+                            alt="Jardines de las Golondrinas - Elegant living room with plush sofas, contemporary design, and a bright, airy atmosphere"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Spacious Living Area</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Spacious Living Area</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443746488_dv4bmi.webp"
-                        class="gallery-img img-fluid"
-                        alt="Marbella vacation rental - Large private terrace featuring premium outdoor lounge furniture with beautiful views of the pine trees and the Mediterranean sea"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Private Terrace</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443746488_dv4bmi.webp"
+                            class="gallery-img img-fluid"
+                            alt="Marbella vacation rental - Large private terrace featuring premium outdoor lounge furniture with beautiful views of the pine trees and the Mediterranean sea"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Private Terrace</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Private Terrace</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/515034747_zbstva.webp"
-                        class="gallery-img img-fluid"
-                        alt="Jardines de las Golondrinas - Charming terrace nook with a stylish hanging egg chair and a complete outdoor dining set"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Relaxation Corner</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/515034747_zbstva.webp"
+                            class="gallery-img img-fluid"
+                            alt="Jardines de las Golondrinas - Charming terrace nook with a stylish hanging egg chair and a complete outdoor dining set"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Relaxation Corner</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Relaxation Corner</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747082_u9f8ch.webp"
-                        class="gallery-img img-fluid"
-                        alt="Marbella vacation rental - Spectacular, unobstructed view of the turquoise Mediterranean Sea"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Panoramic Sea Views</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747082_u9f8ch.webp"
+                            class="gallery-img img-fluid"
+                            alt="Marbella vacation rental - Spectacular, unobstructed view of the turquoise Mediterranean Sea"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Panoramic Sea Views</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Panoramic Sea Views</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258292_xbgxdk.webp"
-                        class="gallery-img img-fluid"
-                        alt="Jardines de las Golondrinas - Luxurious master suite featuring a premium King-size bed, high-end linens, and elegant decor"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Master Bedroom</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258292_xbgxdk.webp"
+                            class="gallery-img img-fluid"
+                            alt="Jardines de las Golondrinas - Luxurious master suite featuring a premium King-size bed, high-end linens, and elegant decor"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Master Bedroom</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Master Bedroom</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258218_bdozwj.webp"
-                        class="gallery-img img-fluid"
-                        alt="Marbella vacation rental - Stylish second bedroom with two comfortable twin beds and sophisticated interior design"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Bedroom</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258218_bdozwj.webp"
+                            class="gallery-img img-fluid"
+                            alt="Marbella vacation rental - Stylish second bedroom with two comfortable twin beds and sophisticated interior design"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Bedroom</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Bedroom</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258766_ey0nig.webp"
-                        class="gallery-img img-fluid"
-                        alt="Jardines de las Golondrinas - Contemporary dining space with a designer table and direct access to the sun-drenched terrace"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Dining Area</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/444258766_ey0nig.webp"
+                            class="gallery-img img-fluid"
+                            alt="Jardines de las Golondrinas - Contemporary dining space with a designer table and direct access to the sun-drenched terrace"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Dining Area</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Dining Area</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747267_rb8e9c.webp"
-                        class="gallery-img img-fluid"
-                        alt="Marbella vacation rental - Crystal clear swimming pool set within beautifully manicured subtropical gardens in Elviria"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Subtropical Pool</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747267_rb8e9c.webp"
+                            class="gallery-img img-fluid"
+                            alt="Marbella vacation rental - Crystal clear swimming pool set within beautifully manicured subtropical gardens in Elviria"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Subtropical Pool</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Subtropical Pool</figcaption>
                 </figure>
             </div>
             <div class="col-md-4">
                 <figure class="gallery-item">
-                    <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/462417799_idco4p.webp"
-                        class="gallery-img img-fluid"
-                        alt="Jardines de las Golondrinas - Traditional seaside chiringuito bar and restaurant offering a relaxed Mediterranean dining experience"
-                        width="800" height="600" loading="lazy" decoding="async">
-                    <div class="g-overlay" aria-hidden="true"><span>Seaside Chiringuito</span></div>
+                    <div class="gallery-img-wrap">
+                        <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/462417799_idco4p.webp"
+                            class="gallery-img img-fluid"
+                            alt="Jardines de las Golondrinas - Traditional seaside chiringuito bar and restaurant offering a relaxed Mediterranean dining experience"
+                            width="800" height="600" loading="lazy" decoding="async">
+                        <div class="g-overlay" aria-hidden="true"><span>Seaside Chiringuito</span></div>
+                    </div>
                     <figcaption class="mt-2 text-muted">Seaside Chiringuito</figcaption>
                 </figure>
             </div>
-        </div>
     </section>
 
     <section class="section-padding bg-accent reveal" id="reviews">
