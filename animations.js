@@ -57,3 +57,52 @@
         nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 }());
+
+// Lightweight replacements for Bootstrap collapse (Navbar and FAQ accordion)
+(function () {
+    // Navbar toggler collapse/expand
+    var toggler = document.querySelector('.navbar-toggler');
+    var menu = document.getElementById('navbarNav');
+    if (toggler && menu) {
+        toggler.addEventListener('click', function () {
+            var expanded = toggler.getAttribute('aria-expanded') === 'true';
+            toggler.setAttribute('aria-expanded', !expanded);
+            menu.classList.toggle('show');
+        });
+    }
+
+    // FAQ Accordion
+    var accordionButtons = document.querySelectorAll('.accordion-button');
+    accordionButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var targetId = btn.getAttribute('data-bs-target');
+            if (!targetId) return;
+            var target = document.querySelector(targetId);
+            if (!target) return;
+
+            var isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+            // Collapse other items in the same accordion
+            var parent = btn.closest('.accordion');
+            if (parent) {
+                var openBtns = parent.querySelectorAll('.accordion-button[aria-expanded="true"]');
+                openBtns.forEach(function (openBtn) {
+                    if (openBtn !== btn) {
+                        openBtn.setAttribute('aria-expanded', 'false');
+                        openBtn.classList.add('collapsed');
+                        var openTargetId = openBtn.getAttribute('data-bs-target');
+                        var openTarget = document.querySelector(openTargetId);
+                        if (openTarget) {
+                            openTarget.classList.remove('show');
+                        }
+                    }
+                });
+            }
+
+            // Toggle current element states
+            btn.setAttribute('aria-expanded', !isExpanded);
+            btn.classList.toggle('collapsed', isExpanded);
+            target.classList.toggle('show');
+        });
+    });
+}());

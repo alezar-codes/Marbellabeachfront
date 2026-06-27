@@ -119,7 +119,7 @@
 
         .btn-book {
             background-color: var(--gold);
-            color: #fff;
+            color: var(--dark-green);
             border: none;
             padding: .75rem 2rem;
             border-radius: 25px;
@@ -130,7 +130,7 @@
         }
 
         .btn-book:hover {
-            background-color: #a88562;
+            background-color: var(--dark-green);
             color: #fff;
             transform: translateY(-2px);
             text-decoration: none;
@@ -154,7 +154,7 @@
 
         .btn-direct {
             background-color: var(--gold);
-            color: #fff;
+            color: var(--dark-green);
             padding: 18px 45px;
             border-radius: 50px;
             font-weight: 600;
@@ -169,7 +169,7 @@
 
         .btn-direct:hover {
             transform: translateY(-3px);
-            background-color: #a88562;
+            background-color: var(--dark-green);
             color: #fff;
         }
 
@@ -600,8 +600,8 @@
         .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; background: var(--dark-green); color: #fff; padding: .7rem 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; transform: translateY(100%); transition: transform .4s cubic-bezier(.22,1,.36,1); box-shadow: 0 -4px 24px rgba(0,0,0,.18); }
         .sticky-cta.visible { transform: translateY(0); }
         .sticky-cta-text { font-size: .88rem; opacity: .82; }
-        .sticky-cta .btn-gold { background: var(--gold); color: #fff; border: none; padding: .5rem 1.6rem; border-radius: 25px; font-weight: 700; text-decoration: none; transition: background .25s; white-space: nowrap; display: inline-block; }
-        .sticky-cta .btn-gold:hover { background: #a88562; color: #fff; }
+        .sticky-cta .btn-gold { background: var(--gold); color: var(--dark-green); border: none; padding: .5rem 1.6rem; border-radius: 25px; font-weight: 700; text-decoration: none; transition: all .25s; white-space: nowrap; display: inline-block; }
+        .sticky-cta .btn-gold:hover { background: var(--dark-green); color: #fff; }
         @media (max-width:576px) { .sticky-cta-text { display: none; } .sticky-cta { gap: .75rem; } }
 
         /* Optimize rendering of below-fold sections */
@@ -1233,7 +1233,7 @@
         </div>
     </section>
 
-    <footer class="py-5 bg-dark text-white-50 text-center">
+    <footer class="py-5 bg-dark text-center" style="color: rgba(255, 255, 255, 0.75);">
         <div class="container">
             <p>&copy; 2026 Marbella Beachfront | Jardines de las Golondrinas, Elviria, Marbella</p>
             <p class="small">Tourist License: VFT/MA/621203</p>
@@ -1241,12 +1241,9 @@
     </footer>
 
     <a href="https://wa.me/37061028665" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i
-            class="fab fa-whatsapp"></i></a>
+            class="fab fa-whatsapp"></i></a>    <!-- @fullcalendar/icalendar and ical.js/fullcalendar scripts removed: dynamically loaded in calendar-init.js -->
+    <!-- bootstrap.bundle.min.js removed: custom toggles implemented in animations.js to save 77KB and avoid unused JS -->
 
-
-    <!-- @fullcalendar/icalendar and ical.js/fullcalendar scripts removed: dynamically loaded in calendar-init.js -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../calendar-init.js" defer></script>
     <script src="../animations.js" defer></script>
 
