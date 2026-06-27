@@ -1,6 +1,13 @@
 // Scroll-reveal animations using IntersectionObserver
 // Note: script is loaded with `defer` so DOM is already ready — no DOMContentLoaded needed
 (function () {
+    // Mark all Font Awesome icons as decorative for screen readers
+    document.querySelectorAll('i.fa, i.fas, i.far, i.fab').forEach(function (icon) {
+        if (!icon.hasAttribute('aria-hidden')) {
+            icon.setAttribute('aria-hidden', 'true');
+        }
+    });
+
     var reveals = document.querySelectorAll('.reveal');
     if (!reveals.length) return;
 

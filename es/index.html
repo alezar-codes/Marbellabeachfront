@@ -32,8 +32,6 @@
     <link rel="alternate" href="https://marbellabeachfront.es/en/" hreflang="x-default">
     <link rel="canonical" href="https://marbellabeachfront.es/es/">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://res.cloudinary.com">
@@ -574,50 +572,217 @@
         }
 
         /* Scroll Indicator */
-        .scroll-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; }
-        .scroll-indicator .mouse { width: 26px; height: 42px; border: 2px solid #fff; border-radius: 15px; position: relative; opacity: .8; transition: opacity .3s, transform .3s; }
-        .scroll-indicator .mouse:hover { opacity: 1; transform: scale(1.05); }
-        .scroll-indicator .wheel { width: 4px; height: 8px; background: #fff; border-radius: 2px; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); animation: scroll-wheel 1.6s infinite; }
-        @keyframes scroll-wheel { 0% { top: 8px; opacity: 1; } 50% { top: 18px; opacity: 0; } 100% { top: 8px; opacity: 0; } }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .scroll-indicator .mouse {
+            width: 26px;
+            height: 42px;
+            border: 2px solid #fff;
+            border-radius: 15px;
+            position: relative;
+            opacity: .8;
+            transition: opacity .3s, transform .3s;
+        }
+
+        .scroll-indicator .mouse:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .scroll-indicator .wheel {
+            width: 4px;
+            height: 8px;
+            background: #fff;
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-wheel 1.6s infinite;
+        }
+
+        @keyframes scroll-wheel {
+            0% {
+                top: 8px;
+                opacity: 1;
+            }
+
+            50% {
+                top: 18px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 8px;
+                opacity: 0;
+            }
+        }
 
         /* Hero gradient */
-        .hero { background: linear-gradient(135deg, rgba(27,48,34,.85) 0%, rgba(193,155,118,.4) 100%), rgba(0,0,0,.2); }
+        .hero {
+            background: linear-gradient(135deg, rgba(27, 48, 34, .85) 0%, rgba(193, 155, 118, .4) 100%), rgba(0, 0, 0, .2);
+        }
 
         /* Navbar scrolled */
-        .navbar-glass.scrolled { box-shadow: 0 4px 20px rgba(193,155,118,.15); }
+        .navbar-glass.scrolled {
+            box-shadow: 0 4px 20px rgba(193, 155, 118, .15);
+        }
 
         /* Stats strip */
-        .stats-strip { background: var(--dark-green); color: #fff; padding: 3.5rem 0; }
-        .stat-item { text-align: center; padding: 0.5rem; }
-        .stat-number { font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; display: block; font-variant-numeric: tabular-nums; min-width: 7ch; }
-        .stat-label { font-size: .78rem; letter-spacing: 1px; text-transform: uppercase; opacity: .7; margin-top: .4rem; display: block; }
+        .stats-strip {
+            background: var(--dark-green);
+            color: #fff;
+            padding: 3.5rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            display: block;
+            font-variant-numeric: tabular-nums;
+            min-width: 7ch;
+        }
+
+        .stat-label {
+            font-size: .78rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: .7;
+            margin-top: .4rem;
+            display: block;
+        }
 
         /* Gallery overlay */
-        .gallery-item { margin-bottom: 1rem; }
-        .gallery-img-wrap { position: relative; overflow: hidden; border-radius: 12px; }
-        .gallery-img-wrap .g-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(27,48,34,.72) 0%, transparent 55%); opacity: 0; transition: opacity .35s ease; display: flex; align-items: flex-end; padding: .85rem 1rem; pointer-events: none; }
-        .gallery-img-wrap:hover .g-overlay { opacity: 1; }
-        .gallery-img-wrap:hover .gallery-img { filter: brightness(.88); }
-        .g-overlay span { color: #fff; font-weight: 600; font-size: .88rem; letter-spacing: .3px; }
+        .gallery-item {
+            margin-bottom: 1rem;
+        }
+
+        .gallery-img-wrap {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .gallery-img-wrap .g-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(27, 48, 34, .72) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity .35s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: .85rem 1rem;
+            pointer-events: none;
+        }
+
+        .gallery-img-wrap:hover .g-overlay {
+            opacity: 1;
+        }
+
+        .gallery-img-wrap:hover .gallery-img {
+            filter: brightness(.88);
+        }
+
+        .g-overlay span {
+            color: #fff;
+            font-weight: 600;
+            font-size: .88rem;
+            letter-spacing: .3px;
+        }
 
         /* Review avatar */
-        .review-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--dark-green); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.05rem; margin: 0 auto .75rem; }
+        .review-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--dark-green);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin: 0 auto .75rem;
+        }
 
         /* Sticky CTA */
-        .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; background: var(--dark-green); color: #fff; padding: .7rem 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1.5rem; transform: translateY(100%); transition: transform .4s cubic-bezier(.22,1,.36,1); box-shadow: 0 -4px 24px rgba(0,0,0,.18); }
-        .sticky-cta.visible { transform: translateY(0); }
-        .sticky-cta-text { font-size: .88rem; opacity: .82; }
-        .sticky-cta .btn-gold { background: var(--gold); color: var(--dark-green); border: none; padding: .5rem 1.6rem; border-radius: 25px; font-weight: 700; text-decoration: none; transition: all .25s; white-space: nowrap; display: inline-block; }
-        .sticky-cta .btn-gold:hover { background: var(--dark-green); color: #fff; }
-        @media (max-width:576px) { .sticky-cta-text { display: none; } .sticky-cta { gap: .75rem; } }
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 998;
+            background: var(--dark-green);
+            color: #fff;
+            padding: .7rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            transform: translateY(100%);
+            transition: transform .4s cubic-bezier(.22, 1, .36, 1);
+            box-shadow: 0 -4px 24px rgba(0, 0, 0, .18);
+        }
 
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease-out, transform .75s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
 
-        /* Optimize rendering of below-fold sections */
-        #gallery, #reviews, #faq, #location {
-            content-visibility: auto;
-            contain-intrinsic-size: auto 800px;
+        .sticky-cta-text {
+            font-size: .88rem;
+            opacity: .82;
+        }
+
+        .sticky-cta .btn-gold {
+            background: var(--gold);
+            color: var(--dark-green);
+            border: none;
+            padding: .5rem 1.6rem;
+            border-radius: 25px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all .25s;
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .sticky-cta .btn-gold:hover {
+            background: var(--dark-green);
+            color: #fff;
+        }
+
+        @media (max-width:576px) {
+            .sticky-cta-text {
+                display: none;
+            }
+
+            .sticky-cta {
+                gap: .75rem;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .75s ease-out, transform .75s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 
@@ -792,7 +957,7 @@
             <source media="(min-width: 768px)"
                 srcset="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp">
             <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp"
-                alt="Marbella Beachfront Hero" class="hero-image" fetchpriority="high">
+                alt="Marbella Beachfront Hero" class="hero-image" fetchpriority="high" width="1200" height="800">
         </picture>
         <div class="container">
             <div class="lang-switcher mb-4 d-flex justify-content-end" aria-label="Selección de idioma">
@@ -1167,7 +1332,7 @@
             <h2 class="text-center mb-5">Ubicación</h2>
             <p class="text-center mb-4">Encuéntranos en el corazón de Elviria, Marbella</p>
             <div class="ratio ratio-16x9 border rounded" id="map-placeholder">
-                <iframe
+                <iframe title="Marbella Beachfront location on Google Maps"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.602391712258!2d-4.776510825135486!3d36.491318385052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd73218f6e1d2767%3A0x30a51b9974711e1d!2sMarbella%20Beachfront%20Apartment%20-%20Jardines%20de%20las%20Golondrinas!5e0!3m2!1sru!2slt!4v1778605509448!5m2!1sru!2slt"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -1255,7 +1420,8 @@
     </footer>
 
     <a href="https://wa.me/37061028665" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i
-            class="fab fa-whatsapp"></i></a>    <!-- @fullcalendar/icalendar and ical.js/fullcalendar scripts removed: dynamically loaded in calendar-init.js -->
+            class="fab fa-whatsapp"></i></a>
+    <!-- @fullcalendar/icalendar and ical.js/fullcalendar scripts removed: dynamically loaded in calendar-init.js -->
     <!-- bootstrap.bundle.min.js removed: custom toggles implemented in animations.js to save 77KB and avoid unused JS -->
 
     <script src="../calendar-init.js" defer></script>
