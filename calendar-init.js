@@ -20,7 +20,9 @@
     var observer = new IntersectionObserver(function (entries, obs) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-                initCalendar();
+                loadCalendarScripts(function () {
+                    initCalendar();
+                });
                 obs.unobserve(calendarEl);
             }
         });
@@ -29,6 +31,31 @@
         threshold: 0.01
     });
     observer.observe(calendarEl);
+
+    function loadCalendarScripts(callback) {
+        if (window.FullCalendar && window.ICAL) {
+            callback();
+            return;
+        }
+        var scripts = [
+            'https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js',
+            'https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js'
+        ];
+        var loaded = 0;
+        scripts.forEach(function (src) {
+            var script = document.createElement('script');
+            script.src = src;
+            script.onload = function () {
+                loaded++;
+                if (loaded === scripts.length) callback();
+            };
+            script.onerror = function () {
+                loaded++;
+                if (loaded === scripts.length) callback();
+            };
+            document.head.appendChild(script);
+        });
+    }
 
     // ─── Helpers ─────────────────────────────────────────────────────────────
 

@@ -613,10 +613,16 @@
 
         .reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease-out, transform .75s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Optimize rendering of below-fold sections */
+        #gallery, #reviews, #faq, #location {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 800px;
+        }
     </style>
 
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=optional"
         media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" media="print"
         onload="this.media='all'">
@@ -625,7 +631,7 @@
 
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=optional">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </noscript>
@@ -786,7 +792,7 @@
             <source media="(min-width: 768px)"
                 srcset="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp">
             <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/443747082_u9f8ch.webp"
-                alt="Marbella Beachfront Hero" class="hero-image" fetchpriority="high" decoding="async">
+                alt="Marbella Beachfront Hero" class="hero-image" fetchpriority="high">
         </picture>
         <div class="container">
             <div class="lang-switcher mb-4 d-flex justify-content-end" aria-label="Selección de idioma">
@@ -1252,9 +1258,7 @@
             class="fab fa-whatsapp"></i></a>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js" defer></script>
-    <!-- @fullcalendar/icalendar removed: parsing done by ical.js directly -->
+    <!-- @fullcalendar/icalendar and ical.js/fullcalendar scripts removed: dynamically loaded in calendar-init.js -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../calendar-init.js" defer></script>
