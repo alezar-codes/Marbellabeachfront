@@ -150,6 +150,13 @@
             background-color: var(--sand);
         }
 
+        /* why-book card headings: styled compact like old h4 */
+        #why-book h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+        }
+
         .btn-direct {
             background-color: var(--gold);
             color: var(--dark-green);
@@ -807,17 +814,17 @@
             <div class="row g-4">
                 <div class="col-md-4 text-center reveal">
                     <i class="fa fa-dollar-sign fa-3x mb-3" style="color:var(--gold)"></i>
-                    <h4>Best Price Guarantee</h4>
+                    <h3>Best Price Guarantee</h3>
                     <p>No service fees like on Booking/Airbnb.</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <i class="fa fa-gift fa-3x mb-3" style="color:var(--gold)"></i>
-                    <h4>Welcome Gift</h4>
+                    <h3>Welcome Gift</h3>
                     <p>A bottle of Spanish wine upon arrival.</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <i class="fa fa-clock fa-3x mb-3" style="color:var(--gold)"></i>
-                    <h4>Flexible Check-in</h4>
+                    <h3>Flexible Check-in</h3>
                     <p>Subject to availability.</p>
                 </div>
             </div>
@@ -1191,17 +1198,17 @@
                     </h3>
                     <form id="booking-inquiry-form">
                         <div class="mb-3">
-                            <label for="checkin" class="form-label small fw-semibold text-muted">Check-in Date</label>
+                            <label for="checkin" class="form-label small fw-semibold" style="color:#555;">Check-in Date</label>
                             <input type="date" id="checkin" class="form-control form-control-lg border-2"
                                 style="border-radius:10px;font-size:0.95rem;" required>
                         </div>
                         <div class="mb-3">
-                            <label for="checkout" class="form-label small fw-semibold text-muted">Check-out Date</label>
+                            <label for="checkout" class="form-label small fw-semibold" style="color:#555;">Check-out Date</label>
                             <input type="date" id="checkout" class="form-control form-control-lg border-2"
                                 style="border-radius:10px;font-size:0.95rem;" required>
                         </div>
                         <div class="mb-4">
-                            <label for="guests" class="form-label small fw-semibold text-muted">Number of Guests</label>
+                            <label for="guests" class="form-label small fw-semibold" style="color:#555;">Number of Guests</label>
                             <select id="guests" class="form-select form-select-lg border-2"
                                 style="border-radius:10px;font-size:0.95rem;">
                                 <option value="1">1 Guest</option>
@@ -1216,8 +1223,8 @@
                         </div>
                         <div class="text-center">
                             <a href="https://wa.me/37061028665" id="whatsapp-inquiry-btn"
-                                class="btn-direct w-100 text-center text-decoration-none disabled"
-                                style="display:block;opacity:0.6;pointer-events:none;">
+                                class="btn-direct w-100 text-center text-decoration-none"
+                                style="display:block;background:#b0b0b0;color:#1a1a1a;pointer-events:none;cursor:default;" aria-disabled="true">
                                 <i class="fab fa-whatsapp me-2"></i> Book via WhatsApp
                             </a>
                         </div>
