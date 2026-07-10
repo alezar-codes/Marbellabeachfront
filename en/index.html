@@ -12,19 +12,21 @@
     <meta property="og:url" content="https://marbellabeachfront.es/en/">
     <meta property="og:title" content="Marbella Beachfront Elviria Jardines de las Golondrinas | Luxury Rental">
     <meta property="og:description"
-        content="Direct booking of first-line apartments in Marbella. 120 m², sea view, 2 bedrooms. Steps from the beach.">
+        content="Direct booking of a 120 m² beachfront apartment in Marbella. Sea views, 2 bedrooms, 1 min to Elviria beach. From €70/night.">
     <meta property="og:image"
         content="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/v1776955350/443747267_rb8e9c.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="en_US">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1B3022">
+    <meta property="og:site_name" content="Marbella Beachfront">
     <meta property="fb:app_id" content="2254764404931859">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://marbellabeachfront.es/en/">
     <meta property="twitter:title" content="Marbella Beachfront Elviria Jardines de las Golondrinas | Luxury Rental">
     <meta property="twitter:description"
-        content="Direct booking of first-line apartments in Marbella. 120 m², sea view, 2 bedrooms.">
+        content="Direct booking of a 120 m² beachfront apartment in Marbella. Sea views, 2 bedrooms, 1 min to Elviria beach. From €70/night.">
     <meta property="twitter:image"
         content="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/v1776955957/443747082_1_wy7gyt.webp">
 
@@ -36,6 +38,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="preload" as="image"
         href="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_600/443747082_u9f8ch.webp"
@@ -89,25 +92,39 @@
 
         .hero h1 {
             color: #fff;
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             text-shadow: 2px 2px 15px rgba(0, 0, 0, .4);
             z-index: 1;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0.75rem auto 0;
+            border-radius: 2px;
         }
 
         .hero .subtitle {
             color: #fff;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             text-shadow: 2px 2px 15px rgba(0, 0, 0, .4);
             z-index: 1;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
+            font-weight: 400;
+            opacity: 0.92;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero .subtitle { font-size: 1.3rem; }
+            .hero h1 { font-size: 1.9rem; }
+            .hero .subtitle { font-size: 1.1rem; }
         }
 
         .hero .container {
@@ -162,15 +179,40 @@
             padding-bottom: 260px;
         }
 
+        @media (max-width: 768px) {
+            #booking { padding-bottom: 100px; }
+        }
+
         .bg-accent {
             background-color: var(--sand);
         }
 
-        /* why-book card headings: styled compact like old h4 */
+        /* why-book cards */
+        #why-book .col-md-4 {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        #why-book .col-md-4:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
+
         #why-book h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-top: 0.75rem;
             margin-bottom: .5rem;
+        }
+
+        #why-book p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .btn-direct {
@@ -192,6 +234,32 @@
             transform: translateY(-3px);
             background-color: var(--dark-green);
             color: #fff;
+        }
+
+        /* Hero CTA override — white button for max contrast on dark background */
+        .hero .btn-direct {
+            background-color: #ffffff;
+            color: var(--dark-green);
+            border: 2px solid #ffffff;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            font-size: 1rem;
+        }
+
+        .hero .btn-direct:hover {
+            background-color: var(--gold);
+            color: #fff;
+            border-color: var(--gold);
+            box-shadow: 0 12px 40px rgba(193, 155, 118, 0.5);
+        }
+
+        @media (max-width: 480px) {
+            .btn-direct {
+                padding: 14px 28px;
+                letter-spacing: 1px;
+                font-size: 0.85rem;
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         .lang-switcher a,
@@ -223,6 +291,10 @@
             height: 350px;
             object-fit: cover;
             transition: .4s;
+        }
+
+        @media (max-width: 576px) {
+            .gallery-img { height: 220px; }
         }
 
         .gallery-img:hover {
@@ -338,20 +410,21 @@
 
         .whatsapp-float {
             position: fixed;
-            bottom: 120px;
-            right: 30px;
+            bottom: 80px;
+            right: 20px;
             background: #25d366;
             color: #fff;
-            width: 65px;
-            height: 65px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            z-index: 1000;
+            font-size: 26px;
+            z-index: 1001;
             box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
             text-decoration: none;
+            transition: transform 0.25s ease, bottom 0.4s cubic-bezier(0.22,1,0.36,1);
         }
 
         .whatsapp-float:hover {
@@ -361,8 +434,11 @@
 
         @media (max-width:768px) {
             .whatsapp-float {
-                bottom: 100px;
-                right: 20px;
+                bottom: 75px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
             }
         }
 
@@ -552,7 +628,8 @@
             font-weight: 600;
             color: var(--dark-green);
             background-color: #fff;
-            padding: 1.25rem;
+            padding: 1.25rem 1.5rem;
+            font-size: 1rem;
         }
 
         .accordion-button:not(.collapsed) {
@@ -567,13 +644,16 @@
         }
 
         .accordion-button::after {
-            filter: grayscale(1);
+            filter: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231B3022'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
 
         .accordion-body {
-            color: #555;
-            line-height: 1.7;
+            color: #444;
+            line-height: 1.75;
             background-color: var(--sand);
+            padding: 1.25rem 1.5rem;
+            font-size: 0.97rem;
         }
 
         .reveal {
@@ -752,6 +832,7 @@
             background: var(--dark-green);
             color: #fff;
             padding: .7rem 1.5rem;
+            padding-bottom: calc(.7rem + env(safe-area-inset-bottom));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -799,9 +880,10 @@
         }
     </style>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         media="print" onload="this.media='all'">
 
@@ -977,12 +1059,11 @@
                     style="border:1px solid #fff;padding:5px 20px;text-transform:uppercase;letter-spacing:3px">Marbella
                     Beachfront</span>
             </div>
-            <h1>Marbella Beachfront Elviria Jardines de las Golondrinas</h1>
+            <h1>Wake Up to the Mediterranean.<br>Every Single Morning.</h1>
 
-            <p class="subtitle">Beachfront Escape: Morning with sea and pine views</p>
-            <p class="lead mb-5 fs-4">Elegant 120 m² apartments<br>First line • 1 minute
-                to Elviria beach • Luxury stays starting from 70€ per night</p>
-            <a href="#booking" class="btn-direct text-decoration-none">Book direct</a>
+            <p class="subtitle">120 m² beachfront apartment in Marbella — 1 min from the sea, no platform fees</p>
+            <p class="lead mb-5 fs-4">Pine trees. Sea breeze. Your private terrace.<br>From <strong>€70/night</strong> — direct, no Airbnb markup</p>
+            <a href="#booking" class="btn-direct text-decoration-none">Check Availability →</a>
         </div>
         <div class="scroll-indicator">
             <a href="#why-book" aria-label="Scroll Down">
@@ -995,7 +1076,7 @@
 
     <section class="section-padding bg-accent reveal" id="why-book">
         <div class="container">
-            <h2 class="text-center mb-5">Why book direct?</h2>
+            <h2 class="text-center mb-5">Skip the Fees. Book Direct.</h2>
             <div class="row g-4">
                 <div class="col-md-4 text-center reveal">
                     <i class="fa fa-dollar-sign fa-3x mb-3" style="color:var(--gold)"></i>
@@ -1019,9 +1100,8 @@
     <section class="section-padding container reveal" id="overview">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-5 mb-lg-0">
-                <h2 class="display-5 mb-4">Your first-line getaway</h2>
-                <p class="lead text-muted">A perfect space for those who value quiet, beauty and the sound of waves
-                    outside the window.</p>
+                <h2 class="display-5 mb-4">120 m² of Pure Marbella</h2>
+                <p class="lead text-muted">A perfect space for those who value quiet, beauty and the sound of waves outside the window.</p>
                 <p>Spacious apartments (120 m²) are located in the elite Elviria community.</p>
                 <ul class="list-unstyled mb-3">
                     <li><i class="fa fa-bed me-2"></i>Master bedroom with a premium King-size bed and ensuite bathroom.
@@ -1096,7 +1176,7 @@
                 <div class="col-6 col-md-3">
                     <div class="stat-item">
                         <span class="stat-number" data-count="5" data-suffix="★">5 ★</span>
-                        <span class="stat-label">En Airbnb.com</span>
+                        <span class="stat-label">On Airbnb.com</span>
                     </div>
                 </div>
             </div>
@@ -1105,7 +1185,7 @@
 
     <section class="section-padding bg-accent reveal" id="amenities">
         <div class="container">
-            <h2 class="text-center mb-5">Complex highlights</h2>
+            <h2 class="text-center mb-5">Everything You Need. Nothing You Don't.</h2>
             <div class="amenities-grid">
                 <div class="amenity-card reveal"><i class="fa fa-swimming-pool"></i>
                     <h3>Pools</h3>
@@ -1136,7 +1216,7 @@
     </section>
 
     <section class="section-padding container">
-        <h2 class="mb-5 text-center">Apartment amenities</h2>
+        <h2 class="mb-5 text-center">What's Waiting for You Inside</h2>
         <div class="amenity-feature-grid">
             <div class="feature-item"><i class="fa fa-star"></i><span><a href="https://www.booking.com/Share-o2ShtT"
                         target="_blank" class="text-decoration-none">9.7/10 on Booking.com</a></span></div>
@@ -1272,7 +1352,7 @@
 
     <section class="section-padding bg-accent reveal" id="reviews">
         <div class="container">
-            <h2 class="text-center mb-5">Guest Reviews</h2>
+            <h2 class="text-center mb-5">Don't Take Our Word for It</h2>
             <div class="reviews-grid">
                 <div class="review-card reveal">
                     <div class="review-avatar" aria-hidden="true">T</div>
@@ -1310,7 +1390,7 @@
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">Yes</div>
+                    <div class="accordion-body">Yes, the building has a lift, so no need to worry about stairs with luggage.</div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -1321,7 +1401,7 @@
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">1 min walk</div>
+                    <div class="accordion-body">Just 1 minute on foot — step out of the complex and you're on Elviria beach. No roads to cross.</div>
                 </div>
             </div>
             <div class="accordion-item">
@@ -1332,7 +1412,7 @@
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">Yes, private gated parking</div>
+                    <div class="accordion-body">Yes, completely free. You get a dedicated private parking spot inside the gated complex — included in your stay.</div>
                 </div>
             </div>
         </div>
@@ -1352,7 +1432,7 @@
     </section>
 
     <section id="booking" class="section-padding container">
-        <h2 class="mb-5 text-center">Availability & Booking</h2>
+        <h2 class="mb-5 text-center">Your Dates Are Waiting</h2>
         <div class="row g-4 justify-content-center align-items-stretch">
             <div class="col-lg-7">
                 <div id="calendar-container"
@@ -1441,8 +1521,8 @@
 
     <!-- Sticky Book CTA -->
     <div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Quick booking">
-        <span class="sticky-cta-text">🌊 Ready for Marbella?</span>
-        <a href="#booking" class="btn-gold">Book Direct</a>
+                    <span class="sticky-cta-text">🌊 Ready for Marbella?</span>
+                        <a href="#booking" class="btn-gold">Book Direct & Save 15%</a>
     </div>
 
 </body>
