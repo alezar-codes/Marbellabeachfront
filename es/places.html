@@ -50,6 +50,11 @@
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,.2); text-decoration: none; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all .8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        .discount-banner { background: linear-gradient(135deg, #1B3022 0%, #2d4f38 100%); color: #fff; padding: 0.9rem 1rem; text-align: center; border-bottom: 2px solid var(--gold); }
+        .discount-banner .tag { display: inline-block; background: var(--gold); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; margin-right: 0.6rem; vertical-align: middle; }
+        .discount-banner p { margin: 0; font-size: 0.9rem; display: inline; }
+        .discount-banner a.btn-banner { display: inline-block; margin-left: 1rem; background: var(--gold); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 0.35rem 1.1rem; border-radius: 20px; text-decoration: none; transition: background .25s; vertical-align: middle; }
+        .discount-banner a.btn-banner:hover { background: #a88562; }
     </style>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" >
@@ -80,6 +85,12 @@
             </div>
         </div>
     </nav>
+
+    <div class="discount-banner">
+        <span class="tag">🎁 20% Off</span>
+        <p>Reserva directamente y olvídate de las comisiones — <strong>Mejor Precio Garantizado</strong> en nuestra web oficial.</p>
+        <a href="index.html" class="btn-banner">Reservar Ahora</a>
+    </div>
 
     <header class="hero-mini">
         <img src="https://res.cloudinary.com/dqu5jcj8g/image/upload/f_auto,q_auto,w_1200/v1776955350/443747267_rb8e9c.webp" alt="Guía Local Hero" class="hero-image">
